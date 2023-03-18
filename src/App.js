@@ -1,10 +1,9 @@
+import Splash from "./components/SplashScreen";
 
 function App() {
   return (
     <div className="App">
-        <p>
-          Fundacion keriva
-        </p>
+      <Splash></Splash>
     </div>
   );
 }
