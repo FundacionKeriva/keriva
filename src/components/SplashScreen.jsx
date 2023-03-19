@@ -1,5 +1,5 @@
 
-import { Col, Container, Image, Row } from "react-bootstrap";
+import { Col, Image, Row } from "react-bootstrap";
 import "../components-css/splash.css";
 
 export default function Splash() {
