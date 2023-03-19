@@ -1,0 +1,63 @@
+.customContainer {
+  width: 100vw;
+  height: 100vh;
+}
+
+.customColImage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 50vw;
+  height: 100vh;
+  background-color: #ffffff;
+}
+
+.customCol {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  max-width: 50vw;
+  height: 100vh;
+  background-color: #941276;
+  color: white;
+}
+
+
+.imageK {
+  max-width: 400px;
+  min-width: 400px;
+  margin-right: 20px;
+  /* Agregar un margen a la derecha para separar la imagen y el título */
+}
+
+.typing-container {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.typing-text {
+  overflow: hidden;
+  /* Oculta el texto que se escribirá */
+  white-space: nowrap;
+  /* Evita que el texto se divida en varias líneas */
+  font-size: 44px;
+  letter-spacing: 0.15em;
+  /* Define el espaciado entre letras */
+  animation: typing 3s steps(30, end) forwards;
+  /* Define la animación */
+}
+
+/* Define la animación */
+@keyframes typing {
+  from {
+    width: 0
+  }
+
+  /* Ancho inicial del borde */
+  to {
+    width: 100%;
+  }
+
+  /* Ancho final del borde */
+}
+
