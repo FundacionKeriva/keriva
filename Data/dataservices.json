@@ -1,0 +1,23 @@
+{
+    "productos": [
+      {
+        "id": 1,
+        "nombre": "Camiseta",
+        "descripcion":"hollaa",
+        "precio": 20
+      },
+      {
+        "id": 2,
+        "nombre": "Pantalón",
+        "descripcion":"hollaa",
+        "precio": 30
+      },
+      {
+        "id": 3,
+        "nombre": "Zapatos",
+        "descripcion":"hollaa",
+        "precio": 50
+      }
+    ]
+  }
+  
