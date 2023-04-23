@@ -1,7 +1,7 @@
 import Splash from "./components/SplashScreen";
 import "./components-css/app.css";
 import { useEffect, useState } from "react";
-import CRUDservices from "./components/CRUDservices";
+import AdminDashboard from "./components/AdminDashboard";
 
 function App() {
   const [show, setShow] = useState(true);
@@ -17,15 +17,15 @@ function App() {
   return (
     <div className="App">
       {
-      show ?(<Splash></Splash>)
-      :
-      (
-        <>
-        <CRUDservices></CRUDservices>
-        <h1>Landing</h1>
-        </>
-      
-      )
+        show ? (<Splash></Splash>)
+          :
+          (
+            <>
+              <h1>Landing</h1>
+              <AdminDashboard></AdminDashboard>
+            </>
+
+          )
       }
     </div>
   );
