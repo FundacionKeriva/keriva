@@ -15,29 +15,21 @@ export default function AddServiceForm(props) {
   const handleSubmit = (event) => {
     event.preventDefault();
     addService(name, price, description).then(() => {
-      setName('');
-      setPrice('');
-      setDescription('');
+      window.location.reload();
     });
   };
 
   const updateServiceClick = () => {
     console.log("editar");
     updateService(id, name,price, description).then(() => {
-      setName('');
-      setPrice('');
-      setDescription('');
-      setId('');
+      window.location.reload();
     });
   }
 
   const deleteServiceClick = () => {
     console.log("eliminar");
     deleteService(id).then(() => {
-        setName('');
-        setPrice('');
-        setDescription('');
-        setId('');
+      window.location.reload();
     });
   };
 
@@ -65,7 +57,7 @@ export default function AddServiceForm(props) {
         <Row>
           {
             flag ?
-              (<Button type="submit" variant="success" disabled={!flag}>Agregar Servicio</Button>)
+              (<Button type="submit" variant="success" disabled={!flag}>Crear Nuevo Servicio</Button>)
               :
               (<>
                 <Button variant="primary" onClick={()=>{updateServiceClick()}} >Editar Servicio</Button>

@@ -59,7 +59,7 @@ export default function Dashboard() {
                             </thead>
                             <tbody>
                                 {services.map((service, index) => (
-                                    <tr key={`tabLS-${index}`}>
+                                    <tr key={`tabLS-${service.id}`}>
                                         <td>{index + 1}</td>
                                         <td>{service.name}</td>
                                         <td>{service.price}</td>
