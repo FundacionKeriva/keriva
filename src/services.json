@@ -1,0 +1,23 @@
+{
+    "services": [
+      {
+        "id": 1,
+        "name": "Servicio 1",
+        "price": 100,
+        "description": "Descripción del servicio 1."
+      },
+      {
+        "id": 2,
+        "name": "Servicio 2",
+        "price": 200,
+        "description": "Descripción del servicio 2."
+      },
+      {
+        "id": 3,
+        "name": "Servicio 3",
+        "price": 300,
+        "description": "Descripción del servicio 3."
+      }
+    ]
+  }
+  
