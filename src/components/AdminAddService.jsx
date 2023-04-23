@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { addService } from '../api';
+import { addService, deleteService,updateService } from '../api';
 import { Button, Col, Row } from 'react-bootstrap';
 
 
@@ -9,6 +9,7 @@ export default function AddServiceForm(props) {
   const [name, setName] = useState(Object.keys(props.currentService).length === 0 ? '' : props.currentService.name);
   const [price, setPrice] = useState(Object.keys(props.currentService).length === 0 ? '' : props.currentService.price);
   const [description, setDescription] = useState(Object.keys(props.currentService).length === 0 ? '' : props.currentService.description);
+  const [id, setId] = useState(Object.keys(props.currentService).length === 0 ? "" : props.currentService.id);
   const [flag, setFlag] = useState(Object.keys(props.currentService).length === 0);
 
   const handleSubmit = (event) => {
@@ -17,6 +18,26 @@ export default function AddServiceForm(props) {
       setName('');
       setPrice('');
       setDescription('');
+    });
+  };
+
+  const updateServiceClick = () => {
+    console.log("editar");
+    updateService(id, name,price, description).then(() => {
+      setName('');
+      setPrice('');
+      setDescription('');
+      setId('');
+    });
+  }
+
+  const deleteServiceClick = () => {
+    console.log("eliminar");
+    deleteService(id).then(() => {
+        setName('');
+        setPrice('');
+        setDescription('');
+        setId('');
     });
   };
 
@@ -47,8 +68,8 @@ export default function AddServiceForm(props) {
               (<Button type="submit" variant="success" disabled={!flag}>Agregar Servicio</Button>)
               :
               (<>
-                <Button variant="primary" >Editar Servicio</Button>
-                <Button variant="danger" disabled={flag} >Eliminar</Button>
+                <Button variant="primary" onClick={()=>{updateServiceClick()}} >Editar Servicio</Button>
+                <Button variant="danger" disabled={flag} onClick={()=>{deleteServiceClick()}}>Eliminar</Button>
               </>
               )
           }
