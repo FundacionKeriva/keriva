@@ -11,6 +11,7 @@ npm install bootstrap y agregamos en index.js: import 'bootstrap/dist/css/bootst
 
 *navegacion*
 npm install react-router-dom@6.4.1
+#### importante: https://www.freecodecamp.org/news/deploy-a-react-app-to-github-pages/ usar HASHROUTER
 
 *firebase* https://www.youtube.com/watch?v=2lkfcEsTkg0
 npm install firebase@9.6.7
