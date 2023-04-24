@@ -10,7 +10,7 @@ function App() {
     // Oculta el componente después de 7 segundos
     const timer = setTimeout(() => {
       setShow(false);
-    }, 2000);//7000
+    }, 20);//7000
     return () => clearTimeout(timer);
   }, []);
 

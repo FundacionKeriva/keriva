@@ -9,6 +9,7 @@ export default function AddServiceForm(props) {
   const [name, setName] = useState(Object.keys(props.currentService).length === 0 ? '' : props.currentService.name);
   const [price, setPrice] = useState(Object.keys(props.currentService).length === 0 ? '' : props.currentService.price);
   const [description, setDescription] = useState(Object.keys(props.currentService).length === 0 ? '' : props.currentService.description);
+  const [imageFile, setImageFile] = useState(null); 
   const [id, setId] = useState(Object.keys(props.currentService).length === 0 ? "" : props.currentService.id);
   const [flag, setFlag] = useState(Object.keys(props.currentService).length === 0);
 
@@ -27,16 +28,28 @@ export default function AddServiceForm(props) {
     setDescription(event.target.value);
   };
 
-  const handleSubmit = (event) => {
+  const handleImageChange = (event) => {
+    const file = event.target.files[0];
+    setImageFile(file);
+  };
+
+  const handleSubmit =async (event) => {
     event.preventDefault();
-    addService(name, price, description).then(() => {
+    try{
+      await addService(name, price, description,imageFile).then(() => {
       props.loadServices();
       setId("");
       setName("");
       setDescription("");
       setPrice("");
       setFlag(true);
+      setImageFile(null);
     });
+    }catch(error){
+      console.error(error);
+      alert("fail creating service");
+    }
+    
   };
 
   const updateServiceClick = (event) => {
@@ -89,9 +102,9 @@ export default function AddServiceForm(props) {
                     />
                   </Form.Group>
                   <Form.Group className="mb-3">
-                    <Form.Label>Nombre</Form.Label>
+                    <Form.Label>Horario</Form.Label>
                     <Form.Control
-                      placeholder="Ejemplo: Lunes a viernes"
+                      placeholder="Ejemplo: Lunes a viernes 8 pm a 10 pm"
                       required
                       type="text"
                       autoFocus
@@ -112,6 +125,10 @@ export default function AddServiceForm(props) {
                       onChange={handlePriceChange}
                       min="1"
                     />
+                  </Form.Group>
+                  <Form.Group className="mb-3">
+                    <Form.Label>Imagen</Form.Label>
+                    <Form.Control type="file" onChange={handleImageChange}/>
                   </Form.Group>
 
                   {

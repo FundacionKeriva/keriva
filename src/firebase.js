@@ -1,6 +1,7 @@
 // Import the functions you need from the SDKs you need
 import firebase from "firebase/compat/app";
 import "firebase/compat/database";
+import "firebase/compat/storage";
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -10,6 +11,7 @@ const firebaseConfig = {
     apiKey: "AIzaSyDM1w8NWqJQ0kC9qLT-Zez4e4iCdodFAtg",
     authDomain: "kerivadb.firebaseapp.com",
     databaseURL:"https://kerivadb-default-rtdb.firebaseio.com/",
+    firebaseBucket:"gs://kerivadb.appspot.com",
     projectId: "kerivadb",
     storageBucket: "kerivadb.appspot.com",
     messagingSenderId: "891345563377",
@@ -18,6 +20,8 @@ const firebaseConfig = {
 
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
+const dbRealmtime=firebase.database();
+const storageFiles = firebase.storage();
 
-export default firebase;
+export  {dbRealmtime,storageFiles};
 
