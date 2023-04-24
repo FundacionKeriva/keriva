@@ -17,17 +17,15 @@ export default function MainNav() {
             margin: 0,
             padding: 0
         }}>
-            <BrowserRouter>
                 <Navigation></Navigation>
                 <Container>
                     <Routes>
-                        <Route path="/" index element={<LandingPage />} />
+                        <Route exact path="/"  element={<LandingPage />} />
                         <Route path="/Catalog" element={<Catalog />} />
                         <Route path="/ContactUs" element={<ContactUs />} />
                         <Route path="/Admin" element={<AdminDashboard />} />
                     </Routes>
                 </Container>
-            </BrowserRouter>
         </Container>
     );
 

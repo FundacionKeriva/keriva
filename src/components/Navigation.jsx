@@ -29,8 +29,8 @@ export default function UserNavigation() {
                         <Nav className="me-auto" >
                             <Nav.Link as={Link} to="/" onClick={() => { setOffcanvasShow(false) }}>Inicio</Nav.Link>
                             <Nav.Link as={Link} to="/Catalog" onClick={() => { setOffcanvasShow(false) }}>Servicios</Nav.Link>
-                            <Nav.Link as={Link} to="/ContactUs">Contactanos</Nav.Link>
-                            <Nav.Link as={Link} to="/Admin">Administracion</Nav.Link>
+                            <Nav.Link as={Link} to="/ContactUs" onClick={() => { setOffcanvasShow(false) }}>Contactanos</Nav.Link>
+                            <Nav.Link as={Link} to="/Admin" onClick={() => { setOffcanvasShow(false) }}>Administracion</Nav.Link>
                         </Nav>
                     </Offcanvas.Body>
                 </Navbar.Offcanvas>
