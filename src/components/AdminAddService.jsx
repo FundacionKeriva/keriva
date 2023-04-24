@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { addService, deleteService, updateService } from '../api';
-import { Button, Col, Row } from 'react-bootstrap';
+import { Button, Col, Row, Modal, Form } from 'react-bootstrap';
 
 
 export default function AddServiceForm(props) {
@@ -11,6 +11,21 @@ export default function AddServiceForm(props) {
   const [description, setDescription] = useState(Object.keys(props.currentService).length === 0 ? '' : props.currentService.description);
   const [id, setId] = useState(Object.keys(props.currentService).length === 0 ? "" : props.currentService.id);
   const [flag, setFlag] = useState(Object.keys(props.currentService).length === 0);
+
+  const handleNameChange = (event) => {
+    event.preventDefault();
+    setName(event.target.value);
+  };
+
+  const handlePriceChange = (event) => {
+    event.preventDefault();
+    setPrice(event.target.value);
+  };
+
+  const handleDescriptionChange = (event) => {
+    event.preventDefault();
+    setDescription(event.target.value);
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -24,8 +39,8 @@ export default function AddServiceForm(props) {
     });
   };
 
-  const updateServiceClick = () => {
-    console.log("editar");
+  const updateServiceClick = (event) => {
+    event.preventDefault();
     updateService(id, name, price, description).then(() => {
       props.loadServices();
       setId("");
@@ -38,7 +53,6 @@ export default function AddServiceForm(props) {
   }
 
   const deleteServiceClick = () => {
-    console.log("eliminar");
     deleteService(id).then(() => {
       props.loadServices();
       setId("");
@@ -51,40 +65,73 @@ export default function AddServiceForm(props) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <Col>
-        <Row>
-          <label>
-            Nombre:
-            <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
-          </label>
-        </Row>
-        <Row>
-          <label>
-            Precio:
-            <input type="text" value={price} onChange={(e) => setPrice(e.target.value)} />
-          </label>
-        </Row>
-        <Row>
-          <label>
-            Descripción:
-            <input type="text" value={description} onChange={(e) => setDescription(e.target.value)} />
-          </label>
-        </Row>
-        <Row>
-          {
-            flag ?
-              (<Button type="submit" variant="success" disabled={!flag}>Nuevo Servicio</Button>)
-              :
-              (
-                <>
-                  <Button variant="primary" onClick={() => { updateServiceClick() }} >Guardar Cambios</Button>
-                  <Button variant="danger" disabled={flag} onClick={() => { deleteServiceClick() }}>Eliminar Servicio</Button>
-                </>
-              )
-          }
-        </Row>
-      </Col>
-    </form>
+    <Col>
+      <div
+        className="modal show"
+        style={{ display: 'block', position: 'initial' }}
+      >
+        <Modal.Dialog>
+          <Modal.Body>
+            <Row>
+              <Col>
+                <Form onSubmit={flag ? handleSubmit : updateServiceClick}>
+                  <br />
+                  <Form.Group className="mb-3">
+                    <Form.Label>Nombre</Form.Label>
+                    <Form.Control
+                      placeholder="Ejemplo: Taller de guitarra"
+                      required
+                      type="text"
+                      autoFocus
+                      name="name"
+                      value={name}
+                      onChange={handleNameChange}
+                    />
+                  </Form.Group>
+                  <Form.Group className="mb-3">
+                    <Form.Label>Nombre</Form.Label>
+                    <Form.Control
+                      placeholder="Ejemplo: Lunes a viernes"
+                      required
+                      type="text"
+                      autoFocus
+                      name="description"
+                      value={description}
+                      onChange={handleDescriptionChange}
+                    />
+                  </Form.Group>
+                  <Form.Group className="mb-3">
+                    <Form.Label>Cuota de recuperación</Form.Label>
+                    <Form.Control
+                      placeholder="Ejemplo: 80"
+                      required
+                      type="number"
+                      autoFocus
+                      name="price"
+                      value={price}
+                      onChange={handlePriceChange}
+                      min="1"
+                    />
+                  </Form.Group>
+
+                  {
+                    flag ?
+                      (<Button variant="success" type="submit" disabled={!flag} >Generar servicio</Button>)
+                      :
+                      (
+                        <>
+                          <Button variant="primary" type="submit">Guardar cambios</Button>
+                          <Button variant="danger" disabled={flag} onClick={() => { deleteServiceClick() }}>Eliminar servicio</Button>
+                        </>
+                      )
+                  }
+                </Form>
+              </Col>
+            </Row>
+          </Modal.Body>
+
+        </Modal.Dialog>
+      </div>
+    </Col>
   );
 }

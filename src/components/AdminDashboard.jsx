@@ -82,6 +82,7 @@ export default function Dashboard() {
                     </div>
                 </Col>
                 <Col>
+                <br/><br/>
                     <FormEditService></FormEditService>
                 </Col>
             </Row>
