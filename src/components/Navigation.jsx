@@ -5,7 +5,7 @@ import "../components-css/navigation.css";
 
 export default function UserNavigation() {
 
-    const [offcanvasShow, setOffcanvasShow] = useState(true);
+    const [offcanvasShow, setOffcanvasShow] = useState(false);
     return (
         <Navbar bg="light" expand="md" collapseOnSelect>
             <Container fluid>
