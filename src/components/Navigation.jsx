@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Outlet, Link } from 'react-router-dom';
 import { Navbar, Container, Col, Row, Nav, Offcanvas, CloseButton, Stack } from 'react-bootstrap';
-
+import "../components-css/navigation.css";
 
 export default function UserNavigation() {
 
@@ -12,15 +12,14 @@ export default function UserNavigation() {
                 <Navbar.Brand as={Link} to="/">Fundación Keriva</Navbar.Brand>
                 <Navbar.Toggle aria-controls="offcanvasNavbar-expand-md" onClick={() => { setOffcanvasShow(true) }} />
                 <Navbar.Offcanvas id="basic-navbar-nav" aria-labelledby="offcanvasNavbarLabel-expand-md" placement="end" show={offcanvasShow}>
-                    <Offcanvas.Header >
+                    <Offcanvas.Header className='nav-header' >
                         <Offcanvas.Title style={{"width":"100%"}}>
                             <Row>
                                 <Col className="col-10">
                                     Fundación Keriva
                                 </Col >
                                 <Col className="col-2" >
-                                    <CloseButton onClick={() => { setOffcanvasShow(false) }} />
-
+                                    <CloseButton onClick={() => { setOffcanvasShow(false) }} variant='white'/>
                                 </Col>
                             </Row>
 
