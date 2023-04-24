@@ -9,7 +9,7 @@ export default function AddServiceForm(props) {
   const [name, setName] = useState(Object.keys(props.currentService).length === 0 ? '' : props.currentService.name);
   const [price, setPrice] = useState(Object.keys(props.currentService).length === 0 ? '' : props.currentService.price);
   const [description, setDescription] = useState(Object.keys(props.currentService).length === 0 ? '' : props.currentService.description);
-  const [imageFile, setImageFile] = useState(null); 
+  const [imageFile, setImageFile] = useState(null);
   const [id, setId] = useState(Object.keys(props.currentService).length === 0 ? "" : props.currentService.id);
   const [flag, setFlag] = useState(Object.keys(props.currentService).length === 0);
 
@@ -30,26 +30,33 @@ export default function AddServiceForm(props) {
 
   const handleImageChange = (event) => {
     const file = event.target.files[0];
-    setImageFile(file);
+    const allowedTypes = ["image/jpeg", "image/png", "image/gif"];
+    if (file && allowedTypes.includes(file.type)) {
+      setImageFile(file);
+    } else {
+      setImageFile(null);
+      event.target.value = null; // limpia el valor de carga del archivo
+      alert("El archivo seleccionado no es una imagen válida. Por favor, seleccione un archivo de imagen (JPEG, PNG o GIF).");
+    }
   };
 
-  const handleSubmit =async (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    try{
-      await addService(name, price, description,imageFile).then(() => {
-      props.loadServices();
-      setId("");
-      setName("");
-      setDescription("");
-      setPrice("");
-      setFlag(true);
-      setImageFile(null);
-    });
-    }catch(error){
+    try {
+      await addService(name, price, description, imageFile).then(() => {
+        props.loadServices();
+        setId("");
+        setName("");
+        setDescription("");
+        setPrice("");
+        setFlag(true);
+        setImageFile(null);
+      });
+    } catch (error) {
       console.error(error);
       alert("fail creating service");
     }
-    
+
   };
 
   const updateServiceClick = (event) => {
@@ -126,9 +133,19 @@ export default function AddServiceForm(props) {
                       min="1"
                     />
                   </Form.Group>
-                  <Form.Group className="mb-3">
-                    <Form.Label>Imagen</Form.Label>
-                    <Form.Control type="file" onChange={handleImageChange}/>
+                  <Form.Group className="mb-3" >
+                    <Row>
+                      <Col>
+                        <Form.Label>Imagen</Form.Label>
+                        <Form.Control type="file" onChange={handleImageChange} disabled={!flag} required={flag} />
+                        <Form.Text className="text-danger">
+                          {flag ? "" : "Este campo no es es editable."}
+                        </Form.Text>
+                      </Col>
+                      <Col >
+                        <img src={imageFile != null ? URL.createObjectURL(imageFile) : ""} alt="." style={{ maxHeight: "100px" }} />
+                      </Col>
+                    </Row>
                   </Form.Group>
 
                   {
