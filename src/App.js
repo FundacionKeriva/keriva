@@ -1,7 +1,7 @@
 import Splash from "./components/SplashScreen";
 import "./components-css/app.css";
 import { useEffect, useState } from "react";
-import AdminDashboard from "./components/AdminDashboard";
+import MainNavigation from "./components/MainNavigation";
 
 function App() {
   const [show, setShow] = useState(true);
@@ -10,7 +10,7 @@ function App() {
     // Oculta el componente después de 7 segundos
     const timer = setTimeout(() => {
       setShow(false);
-    }, 70);//7000
+    }, 2000);//7000
     return () => clearTimeout(timer);
   }, []);
 
@@ -21,10 +21,8 @@ function App() {
           :
           (
             <>
-              <h1>Landing</h1>
-              <AdminDashboard></AdminDashboard>
+            <MainNavigation></MainNavigation>
             </>
-
           )
       }
     </div>
