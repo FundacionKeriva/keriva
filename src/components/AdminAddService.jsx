@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { addService, deleteService,updateService } from '../api';
+import { addService, deleteService, updateService } from '../api';
 import { Button, Col, Row } from 'react-bootstrap';
 
 
@@ -15,21 +15,38 @@ export default function AddServiceForm(props) {
   const handleSubmit = (event) => {
     event.preventDefault();
     addService(name, price, description).then(() => {
-      window.location.reload();
+      props.loadServices();
+      setId("");
+      setName("");
+      setDescription("");
+      setPrice("");
+      setFlag(true);
     });
   };
 
   const updateServiceClick = () => {
     console.log("editar");
-    updateService(id, name,price, description).then(() => {
-      window.location.reload();
+    updateService(id, name, price, description).then(() => {
+      props.loadServices();
+      setId("");
+      setName("");
+      setDescription("");
+      setPrice("");
+      setFlag(true);
+      props.setCurrentService("");
     });
   }
 
   const deleteServiceClick = () => {
     console.log("eliminar");
     deleteService(id).then(() => {
-      window.location.reload();
+      props.loadServices();
+      setId("");
+      setName("");
+      setDescription("");
+      setPrice("");
+      setFlag(true);
+      props.setCurrentService("");
     });
   };
 
@@ -57,12 +74,13 @@ export default function AddServiceForm(props) {
         <Row>
           {
             flag ?
-              (<Button type="submit" variant="success" disabled={!flag}>Crear Nuevo Servicio</Button>)
+              (<Button type="submit" variant="success" disabled={!flag}>Nuevo Servicio</Button>)
               :
-              (<>
-                <Button variant="primary" onClick={()=>{updateServiceClick()}} >Editar Servicio</Button>
-                <Button variant="danger" disabled={flag} onClick={()=>{deleteServiceClick()}}>Eliminar</Button>
-              </>
+              (
+                <>
+                  <Button variant="primary" onClick={() => { updateServiceClick() }} >Guardar Cambios</Button>
+                  <Button variant="danger" disabled={flag} onClick={() => { deleteServiceClick() }}>Eliminar Servicio</Button>
+                </>
               )
           }
         </Row>

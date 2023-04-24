@@ -20,9 +20,15 @@ export default function Dashboard() {
         setCurrentService(service);
     }
 
+    const loadServices = () => {
+        getServices().then((servicesData) => {
+            setServices(servicesData);
+        });
+    }
+
     function FormEditService() {
         return (
-            <AdminAddService currentService={currentService} ></AdminAddService>
+            <AdminAddService currentService={currentService} setCurrentService={setCurrentService} loadServices={loadServices} ></AdminAddService>
         );
     }
 
@@ -32,13 +38,12 @@ export default function Dashboard() {
             <Row>
                 <Col><Row className="d-flex justify-content-between align-items-center">
                     <h1 className="col-md-6 m-0">Servicios</h1>
-                    {
-                        Object.keys(currentService).length===0? null :<Button variant="success" className="col-md-6" onClick={()=>{setCurrentService({})}}>Nuevo Servicio</Button>
-                    }
-                    
                 </Row>
-                <br/>
+                    <br />
                     <div className="col-md-12">
+                        {
+                            Object.keys(currentService).length === 0 ? null : <Button variant="success buttonCustom" onClick={() => { setCurrentService({}) }}>Nuevo Servicio</Button>
+                        }
                         <table className="table table-bordered table-hover">
                             <thead>
                                 <tr>
@@ -73,6 +78,7 @@ export default function Dashboard() {
                                 ))}
                             </tbody>
                         </table>
+
                     </div>
                 </Col>
                 <Col>
