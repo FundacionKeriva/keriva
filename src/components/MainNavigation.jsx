@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Container } from 'react-bootstrap';
-import ReactDOM from 'react-dom';
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import {  Route, Routes } from "react-router-dom";
 
 import Navigation from "./Navigation";
 import ContactUs from "./ContactUs";

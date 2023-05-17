@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Outlet, Link } from 'react-router-dom';
-import { Navbar, Container, Col, Row, Nav, Offcanvas, CloseButton, Stack } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import { Navbar, Container, Col, Row, Nav, Offcanvas, CloseButton} from 'react-bootstrap';
 import "../components-css/navigation.css";
 
 export default function UserNavigation() {
