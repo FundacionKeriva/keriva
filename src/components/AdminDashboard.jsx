@@ -57,7 +57,6 @@ export default function Dashboard() {
 
     return (
         <Container>
-            <br />
             <Row>
                 <Col><Row className="d-flex justify-content-between align-items-center">
                     <h1 className="col-md-6 m-0">Servicios</h1>

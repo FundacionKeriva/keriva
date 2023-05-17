@@ -7,7 +7,7 @@ export default function UserNavigation() {
 
     const [offcanvasShow, setOffcanvasShow] = useState(false);
     return (
-        <Navbar bg="light" expand="md" collapseOnSelect>
+        <Navbar bg="light" expand="md" collapseOnSelect fixed="top">
             <Container fluid>
                 <Navbar.Brand as={Link} to="/">Fundación Keriva</Navbar.Brand>
                 <Navbar.Toggle aria-controls="offcanvasNavbar-expand-md" onClick={() => { setOffcanvasShow(true) }} />
