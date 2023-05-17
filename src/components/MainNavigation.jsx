@@ -15,6 +15,7 @@ export default function MainNav() {
                 <Navigation></Navigation>
                 <br></br>
                 <br></br>
+                <br></br>
                     <Routes>
                         <Route exact path="/"  element={<LandingPage />} />
                         <Route path="/Catalog" element={<Catalog />} />
