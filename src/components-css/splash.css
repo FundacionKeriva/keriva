@@ -1,6 +1,7 @@
 .customContainer {
   width: 100vw;
   height: 100vh;
+  overflow: hidden; /* Oculta las barras de desplazamiento */
 }
 
 .customColImage {
