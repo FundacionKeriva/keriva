@@ -9,7 +9,7 @@ export default function UserNavigation() {
     return (
         <Navbar bg="light" expand="md" collapseOnSelect>
             <Container fluid>
-                <Navbar.Brand as={Link} to="/Home">Fundación Keriva</Navbar.Brand>
+                <Navbar.Brand as={Link} to="/">Fundación Keriva</Navbar.Brand>
                 <Navbar.Toggle aria-controls="offcanvasNavbar-expand-md" onClick={() => { setOffcanvasShow(true) }} />
                 <Navbar.Offcanvas id="basic-navbar-nav" aria-labelledby="offcanvasNavbarLabel-expand-md" placement="end" show={offcanvasShow}>
                     <Offcanvas.Header className='nav-header' >
@@ -27,7 +27,7 @@ export default function UserNavigation() {
                     </Offcanvas.Header>
                     <Offcanvas.Body>
                         <Nav className="me-auto" >
-                            <Nav.Link as={Link} to="/Home" onClick={() => { setOffcanvasShow(false) }}>Inicio</Nav.Link>
+                            <Nav.Link as={Link} to="/" onClick={() => { setOffcanvasShow(false) }}>Inicio</Nav.Link>
                             <Nav.Link as={Link} to="/Catalog" onClick={() => { setOffcanvasShow(false) }}>Servicios</Nav.Link>
                             <Nav.Link as={Link} to="/ContactUs" onClick={() => { setOffcanvasShow(false) }}>Contactanos</Nav.Link>
                             <Nav.Link as={Link} to="/Admin" onClick={() => { setOffcanvasShow(false) }}>Administracion</Nav.Link>

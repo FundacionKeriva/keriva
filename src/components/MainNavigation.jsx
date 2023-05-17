@@ -19,7 +19,7 @@ export default function MainNav() {
                 <Navigation></Navigation>
                 <Container>
                     <Routes>
-                        <Route exact path="/Home"  element={<LandingPage />} />
+                        <Route exact path="/"  element={<LandingPage />} />
                         <Route path="/Catalog" element={<Catalog />} />
                         <Route path="/ContactUs" element={<ContactUs />} />
                         <Route path="/Admin" element={<AdminDashboard />} />
