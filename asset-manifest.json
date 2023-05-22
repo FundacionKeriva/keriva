@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/keriva/static/css/main.958fb923.css",
-    "main.js": "/keriva/static/js/main.5333a977.js",
+    "main.css": "/keriva/static/css/main.354a691d.css",
+    "main.js": "/keriva/static/js/main.eaadfb51.js",
     "index.html": "/keriva/index.html",
-    "main.958fb923.css.map": "/keriva/static/css/main.958fb923.css.map",
-    "main.5333a977.js.map": "/keriva/static/js/main.5333a977.js.map"
+    "main.354a691d.css.map": "/keriva/static/css/main.354a691d.css.map",
+    "main.eaadfb51.js.map": "/keriva/static/js/main.eaadfb51.js.map"
   },
   "entrypoints": [
-    "static/css/main.958fb923.css",
-    "static/js/main.5333a977.js"
+    "static/css/main.354a691d.css",
+    "static/js/main.eaadfb51.js"
   ]
 }
