@@ -7,10 +7,10 @@ export default function UserNavigation() {
 
     const [offcanvasShow, setOffcanvasShow] = useState(false);
     return (
-        <Navbar bg="light" expand="md" collapseOnSelect fixed="top">
-            <Container fluid>
-                <Navbar.Brand as={Link} to="/">Fundación Keriva</Navbar.Brand>
-                <Navbar.Toggle aria-controls="offcanvasNavbar-expand-md" onClick={() => { setOffcanvasShow(true) }} />
+        <Navbar className='navbar' expand="md" collapseOnSelect fixed="top" variant="dark">
+            <Container fluid >
+                <Navbar.Brand as={Link} to="/" style={{color:"white",fontSize:24+"px"}}>Fundación Keriva</Navbar.Brand>
+                <Navbar.Toggle  aria-controls="offcanvasNavbar-expand-md"  onClick={() => { setOffcanvasShow(true) }}/>
                 <Navbar.Offcanvas id="basic-navbar-nav" aria-labelledby="offcanvasNavbarLabel-expand-md" placement="end" show={offcanvasShow}>
                     <Offcanvas.Header className='nav-header' >
                         <Offcanvas.Title style={{"width":"100%"}}>
@@ -25,12 +25,12 @@ export default function UserNavigation() {
 
                         </Offcanvas.Title>
                     </Offcanvas.Header>
-                    <Offcanvas.Body>
-                        <Nav className="me-auto" >
-                            <Nav.Link as={Link} to="/" onClick={() => { setOffcanvasShow(false) }}>Inicio</Nav.Link>
-                            <Nav.Link as={Link} to="/Catalog" onClick={() => { setOffcanvasShow(false) }}>Servicios</Nav.Link>
-                            <Nav.Link as={Link} to="/ContactUs" onClick={() => { setOffcanvasShow(false) }}>Contactanos</Nav.Link>
-                            <Nav.Link as={Link} to="/Admin" onClick={() => { setOffcanvasShow(false) }}>Administracion</Nav.Link>
+                    <Offcanvas.Body >
+                        <Nav className="ms-auto" >
+                            <Nav.Link as={Link} to="/" onClick={() => { setOffcanvasShow(false) }} style={{ color: offcanvasShow ? "black":"white", fontSize:20+"px"}}>Inicio</Nav.Link>
+                            <Nav.Link as={Link} to="/Catalog" onClick={() => { setOffcanvasShow(false) }} style={{ color: offcanvasShow ? "black":"white",fontSize:20+"px"}}>Servicios</Nav.Link>
+                            <Nav.Link as={Link} to="/ContactUs" onClick={() => { setOffcanvasShow(false) }} style={{ color: offcanvasShow ? "black":"white",fontSize:20+"px"}}>Contactanos</Nav.Link>
+                            <Nav.Link as={Link} to="/Admin" onClick={() => { setOffcanvasShow(false) }} style={{ color: offcanvasShow ? "black":"white",fontSize:20+"px"}}>Administracion</Nav.Link>
                         </Nav>
                     </Offcanvas.Body>
                 </Navbar.Offcanvas>
