@@ -1,14 +1,12 @@
 .section-carrusel {
-  background-color: #b05e9c;
-  background-image: linear-gradient(0.25turn, #fff 0%, #b05e9c 80%);
+  color:aliceblue;
+  background:  #2f257d;
 }
 
 .section-contacto {
-  background-color: #b05e9c;
-  background-image: linear-gradient(0.25turn, #fff 0%, #b05e9c 80%);
+  background:#ffde33;
 }
 
 .section-footer {
-  background-color: #b05e9c;
-  background-image: linear-gradient(0.25turn, #fff 0%, #b05e9c 80%);
+  background-image: linear-gradient(0.25turn, #94be28 0%, #94be28 80%);
 }
