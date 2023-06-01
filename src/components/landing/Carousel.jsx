@@ -16,35 +16,32 @@ export default function CarouselServices() {
     return (
         <Carousel style={{
             maxWidth: '100%',
-            maxHeight:"100%"
+            maxHeight: "100%",
+            justifyContent: "center",
+            alignItems: "center"
         }}>
             {
-                services.map((service) => (
-                    <Carousel.Item>
+                services.map((service, index) => (
+                    <Carousel.Item key={`ca-${index}`}>
                         <Row gap={5} style={{
-                            display: 'flex',
                             alignItems: 'center',
-                            gap: '5px',
-                            padding: '10px',
-                            justifyContent: 'center'
+                            padding: '50px',
+                            textAlign: "center",
+                            justifyContent: 'center',
+                            backdropFilter: 'blur(10px)',
+                            background: 'rgba(255, 255, 255, 0.1)'
                         }}>
                             <Col>
-                            <Image src={service.imageUrl} rounded style={{ width: "400px", height: "400px" }} />
+                                <Image src={service.imageUrl} rounded style={{ width: "400px", height: "400px" }} />
                             </Col>
                             <Col>
-                            <div className="bg-warning border">First item</div>
-                            <div className="bg-warning border">Second item</div>
-                            <div className="bg-warning border">Third item</div>
+                                <h2>{service.name}</h2>
+                                <h4>{service.description}</h4>
                             </Col>
                         </Row>
-                        <Stack direction="horizontal"   >
-                            
-                            
-                        </Stack>
                     </Carousel.Item>
                 ))
             }
-
         </Carousel>
     );
 }
