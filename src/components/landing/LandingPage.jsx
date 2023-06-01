@@ -3,6 +3,8 @@ import "fullpage.js/dist/fullpage.css";
 import fullpage from "fullpage.js";
 import "./landing.css"; 
 
+import Carousel from "./Carousel";
+
 export default function LandPage() {
   const fullpageRef = useRef(null);
   let fullpageInstance = null;
@@ -22,7 +24,7 @@ export default function LandPage() {
   return (
     <div ref={fullpageRef} className="fullpage-wrapper">
       <div className="section section-carrusel">
-        <h1>Carrusel de servicios</h1>
+        <Carousel/>
       </div>
       <div className="section section-contacto">
         <h1>Contactanos</h1>
