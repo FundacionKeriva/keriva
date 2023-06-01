@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Carousel, Stack, Image, Row, Col } from 'react-bootstrap';
 import { getServices } from '../../api';
+import "./carousel.css";
 
 export default function CarouselServices() {
     const [services, setServices] = useState([]);
@@ -25,14 +26,17 @@ export default function CarouselServices() {
                     <Carousel.Item key={`ca-${index}`}>
                         <Row gap={5} style={{
                             alignItems: 'center',
-                            padding: '50px',
                             textAlign: "center",
                             justifyContent: 'center',
+                            padding: '50px',
                             backdropFilter: 'blur(10px)',
-                            background: 'rgba(255, 255, 255, 0.1)'
+                            background: 'rgba(255, 255, 255, 0.1)',
+                            perspective: "1000px"
                         }}>
                             <Col>
-                                <Image src={service.imageUrl} rounded style={{ width: "400px", height: "400px" }} />
+                                <div className="custom-card">
+                                    <Image src={service.imageUrl} rounded style={{ width: "370px", height: "370px" }} />
+                                </div>
                             </Col>
                             <Col>
                                 <h2>{service.name}</h2>
