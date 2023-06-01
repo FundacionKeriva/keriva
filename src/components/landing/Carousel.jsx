@@ -5,6 +5,7 @@ import "./carousel.css";
 
 export default function CarouselServices() {
     const [services, setServices] = useState([]);
+    const [buttonHover,setButtonHover]=useState(false);
 
     useEffect(() => {
         // Obtiene los servicios de la base de datos al cargar el componente
@@ -14,6 +15,7 @@ export default function CarouselServices() {
             setServices(firstThreeServices);
         });
     }, []);
+
 
 
     return (
@@ -64,10 +66,11 @@ export default function CarouselServices() {
                         </div>
                     </Col>
                     <Col>
-                        <Button className="buttonC" style={{
-                            background: "#941276",
-                            borderColor: "#fff"
-                        }} 
+                        <Button style={{
+                            background: buttonHover?  "#974784":"#941276",
+                            borderColor:"transparent"
+                        }} onMouseEnter={()=>setButtonHover(true)}
+                        onMouseLeave={()=>setButtonHover(false)}
                         >
                             Ver más...
                         </Button>

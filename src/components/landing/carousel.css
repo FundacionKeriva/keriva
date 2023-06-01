@@ -1,11 +1,3 @@
-.buttonC {
-    background: #941276;
-}
-
-.buttonC:hover {
-    background: #ff1;
-}
-
 .custom-card {
     position: relative;
     transform-style: preserve-3d;
