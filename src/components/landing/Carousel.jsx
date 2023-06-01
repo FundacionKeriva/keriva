@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from 'react-router-dom';
 import { Carousel, Image, Row, Col, Button } from 'react-bootstrap';
 import { getServices } from '../../api';
 import "./carousel.css";
 
 export default function CarouselServices() {
+    const navigate = useNavigate();
     const [services, setServices] = useState([]);
-    const [buttonHover,setButtonHover]=useState(false);
+    const [buttonHover, setButtonHover] = useState(false);
 
     useEffect(() => {
         // Obtiene los servicios de la base de datos al cargar el componente
@@ -16,7 +18,9 @@ export default function CarouselServices() {
         });
     }, []);
 
-
+    const navigateToCatalog = () => {
+        navigate('/Catalog');
+    };
 
     return (
         <Carousel style={{
@@ -67,10 +71,12 @@ export default function CarouselServices() {
                     </Col>
                     <Col>
                         <Button style={{
-                            background: buttonHover?  "#974784":"#941276",
-                            borderColor:"transparent"
-                        }} onMouseEnter={()=>setButtonHover(true)}
-                        onMouseLeave={()=>setButtonHover(false)}
+                            background: buttonHover ? "#974784" : "#941276",
+                            borderColor: "transparent"
+                        }}
+                            onClick={navigateToCatalog}
+                            onMouseEnter={() => setButtonHover(true)}
+                            onMouseLeave={() => setButtonHover(false)}
                         >
                             Ver más...
                         </Button>
