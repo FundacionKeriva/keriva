@@ -27,12 +27,14 @@ export default function Services() {
                             <Card
                                 bg="dark"
                                 text="white"
+                                className="card-custom"
                                 style={{
-                                    height: "370px",
-                                    width:"320px",
+                                    height: "420px",
+                                    width: "320px",
                                     backgroundImage: 'url("https://papers.co/wallpaper/papers.co-sb85-purple-sunshine-blur-35-3840x2160-4k-wallpaper.jpg")',
                                     backgroundSize: 'cover',
                                     borderRadius: '5px',
+                                    boxShadow: '0 5px 8px rgba(0, 0, 0, 1)'
                                 }}
                             >
                                 <Card.Body style={{ backdropFilter: 'blur(20px)', maxHeight: "100%" }}>
@@ -42,7 +44,8 @@ export default function Services() {
                                         </div>
                                         <div>
                                             <h4>{service.name}</h4>
-                                            <p>{service.description}</p>
+                                            <h6>{service.description}</h6>
+                                            <p>Cuota de recuperación: ${service.price} </p>
                                         </div>
                                     </div>
                                 </Card.Body>
