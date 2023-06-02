@@ -15,12 +15,12 @@ export default function Services() {
     }, []);
 
     return (
-        <div className="justify-content-center" style={{ textAlign: "center", alignItems: 'center' }}>
+        <div style={{ textAlign: "center", alignItems: 'center' }}>
             <br></br>
             <br></br>
             <h1>Conoce nuestros servicios</h1>
             <br></br>
-            <Row xs={1} sm={2} md={3} lg={4} xl={5} className="g-4 justify-content-center" style={{ padding: "20px", alignItems: 'center' }}>
+            <Row xs={1} md={2} lg={3} xl={4} className="g-4 justify-content-center" style={{ padding: "20px", alignItems: 'center' }}>
                 {
                     services.map((service, index) => (
                         <Col key={`cata-${index}`}>
@@ -29,21 +29,20 @@ export default function Services() {
                                 text="white"
                                 style={{
                                     height: "370px",
-                                    maxWidth: "300px",
-                                    backgroundImage: 'url("/keriva/Images/backgrounds/purple-waves.gif")',
+                                    width:"320px",
+                                    backgroundImage: 'url("https://papers.co/wallpaper/papers.co-sb85-purple-sunshine-blur-35-3840x2160-4k-wallpaper.jpg")',
                                     backgroundSize: 'cover',
-                                    backdropFilter: 'blur(8px)',
-                                    borderRadius: '10px',
+                                    borderRadius: '5px',
                                 }}
                             >
-                                <Card.Body style={{ backdropFilter: 'blur(8px)' }}>
+                                <Card.Body style={{ backdropFilter: 'blur(20px)', maxHeight: "100%" }}>
                                     <div className="d-flex flex-column">
                                         <div className="mb-3">
                                             <img src={service.imageUrl} alt="Imagen" style={{ width: '100%', maxWidth: "100%", height: "250px", maxHeight: "300px" }} />
                                         </div>
                                         <div>
-                                            <h4>Título de la Card</h4>
-                                            <p>Texto de la Card</p>
+                                            <h4>{service.name}</h4>
+                                            <p>{service.description}</p>
                                         </div>
                                     </div>
                                 </Card.Body>
