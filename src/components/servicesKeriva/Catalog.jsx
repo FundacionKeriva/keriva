@@ -36,7 +36,7 @@ export default function Services() {
                                             <img src={service.imageUrl} alt="Imagen" style={{ width: '100%', maxWidth: "100%", height: "250px", maxHeight: "300px" }} />
                                         </div>
                                         <div>
-                                        <OverlayTrigger
+                                            <OverlayTrigger
                                                 placement="top"
                                                 overlay={<Tooltip>{service.name}</Tooltip>}
                                             >
