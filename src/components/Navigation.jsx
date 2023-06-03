@@ -30,7 +30,7 @@ export default function UserNavigation() {
                             <Nav.Link as={Link} to="/" onClick={() => { setOffcanvasShow(false) }} style={{ color: offcanvasShow ? "black":"white", fontSize:20+"px"}}>Inicio</Nav.Link>
                             <Nav.Link as={Link} to="/Catalog" onClick={() => { setOffcanvasShow(false) }} style={{ color: offcanvasShow ? "black":"white",fontSize:20+"px"}}>Servicios</Nav.Link>
                             <Nav.Link as={Link} to="/ContactUs" onClick={() => { setOffcanvasShow(false) }} style={{ color: offcanvasShow ? "black":"white",fontSize:20+"px"}}>Contactanos</Nav.Link>
-                            <Nav.Link as={Link} to="/Admin" onClick={() => { setOffcanvasShow(false) }} style={{ color: offcanvasShow ? "black":"white",fontSize:20+"px"}}>Administracion</Nav.Link>
+                            <Nav.Link as={Link} to="/Administration" onClick={() => { setOffcanvasShow(false) }} style={{ color: offcanvasShow ? "black":"white",fontSize:20+"px"}}>Administración</Nav.Link>
                         </Nav>
                     </Offcanvas.Body>
                 </Navbar.Offcanvas>
