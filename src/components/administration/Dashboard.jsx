@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Row, Container, Button, OverlayTrigger, Tooltip, Modal, Form } from "react-bootstrap";
 import { MdEditSquare, MdDelete } from 'react-icons/md';
-import { getServices,setServiceAvailability ,deleteService } from '../../api';
+import { getServices, setServiceAvailability, deleteService } from '../../api';
 import "./adminDashboard.css";
 import ModalAddService from "./AddService";
 import ModalUpdateService from "./UpdateService";
@@ -14,8 +14,8 @@ export default function Dashboard() {
     //modal Add service
     const [showModalAdd, setShowModalAdd] = useState(false);
 
-     //modal Update service
-     const [showModalUpdate, setShowModalUpdate] = useState(false);
+    //modal Update service
+    const [showModalUpdate, setShowModalUpdate] = useState(false);
 
     //modal delete service
     const [deleteModalShow, setDeleteModalShow] = useState(false);
@@ -35,12 +35,12 @@ export default function Dashboard() {
         setShowModalAdd(true);
     };
 
-    const handleServiceAvailabilityChange = (id,checked) => {
+    const handleServiceAvailabilityChange = (id, checked) => {
         const updatedAvailability = checked ? true : false;
-        setServiceAvailability(id,updatedAvailability);
+        setServiceAvailability(id, updatedAvailability);
         loadServices();
     };
-    
+
     const handleUpdateIconClick = (service) => {
         setCurrentService(service);
         setShowModalUpdate(true);
@@ -164,19 +164,25 @@ export default function Dashboard() {
                     </table>
                 </div>
             </Row>
+
             <ModalAddService
                 show={showModalAdd}
                 onHide={() => setShowModalAdd(false)}
                 loadServices={loadServices}
-                
+
             />
-            <ModalUpdateService
-                show={showModalUpdate}
-                onHide={() => setShowModalUpdate(false)}
-                loadServices={loadServices}
-                service={currentService}
-            />
-            {/* Modal de confirmación */}
+            {
+                currentService && (
+                    <ModalUpdateService
+                        show={showModalUpdate}
+                        onHide={() => setShowModalUpdate(false)}
+                        loadServices={loadServices}
+                        service={currentService}
+                    />
+                )
+            }
+
+            {/* confirm delete*/}
             {
                 currentService && (
                     <Modal show={deleteModalShow} onHide={() => setDeleteModalShow(false)}>

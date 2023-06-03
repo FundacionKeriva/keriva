@@ -11,10 +11,10 @@ const EditModal = ({ show, onHide, loadServices, service }) => {
 
     useEffect(() => {
         if (service) {
-            setName(service.name);
-            setPrice(service.price);
-            setDescription(service.description);
-        }
+            setName(service.name || "");
+            setPrice(service.price || "");
+            setDescription(service.description || "");
+          }
     }, [service]);
 
     const styleButton = {
