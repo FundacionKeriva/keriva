@@ -46,7 +46,7 @@ const EditModal = ({ show, onHide, loadServices }) => {
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            await addService(name, price, description, imageFile).then(() => {
+            await addService(name, price, description, imageFile,true).then(() => {
                 //close modal and load services
                 onHide();
                 loadServices();

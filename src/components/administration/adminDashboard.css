@@ -1,4 +1,6 @@
 .tooltip-custom {
-    background-color: transparent; /* Cambia el color de fondo del tooltip según tus preferencias */
-    opacity: 10; /* Establece la opacidad en 1 para que no haya transparencia */
-  }
+  background-color: transparent;
+  /* Cambia el color de fondo del tooltip según tus preferencias */
+  opacity: 10;
+  /* Establece la opacidad en 1 para que no haya transparencia */
+}
