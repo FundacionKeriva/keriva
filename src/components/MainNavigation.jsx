@@ -5,8 +5,7 @@ import Navigation from "./Navigation";
 import ContactUs from "./ContactUs";
 import LandingPage from "./landing/LandingPage";
 import Catalog from "./servicesKeriva/Catalog";
-import AdminDashboard from "./AdminDashboard";
-
+import AdminDashboard from "./administration/Dashboard";
 
 export default function MainNav() {
 
