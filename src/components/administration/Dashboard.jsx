@@ -2,10 +2,14 @@ import React, { useState, useEffect } from "react";
 import { Row, Container, Button, OverlayTrigger, Tooltip } from "react-bootstrap";
 import { getServices } from '../../api';
 import "./adminDashboard.css";
+import ModalAddService from "./AddService";
 
 export default function Dashboard() {
     const [services, setServices] = useState([]);
     const [newServiceHover, setNewServiceHover] = useState(false);
+
+    //modal
+    const [showModal, setShowModal] = useState(false);
 
     useEffect(() => {
         loadServices();
@@ -16,6 +20,10 @@ export default function Dashboard() {
             setServices(servicesData);
         });
     }
+
+    const handleNewServiceClick = (service) => {
+        setShowModal(true);
+    };
 
     const styleNewService = {
         background: newServiceHover ? "#ee66aa" : "#ee00aa",
@@ -48,7 +56,7 @@ export default function Dashboard() {
                         style={styleNewService}
                         onMouseEnter={() => setNewServiceHover(true)}
                         onMouseLeave={() => setNewServiceHover(false)}
-                        onClick={() => { }}>Nuevo Servicio</Button>
+                        onClick={handleNewServiceClick}>Nuevo Servicio</Button>
                 </div>
                 <br></br>
                 <br></br>
@@ -107,6 +115,11 @@ export default function Dashboard() {
 
                 </div>
             </Row>
+            <ModalAddService
+                show={showModal}
+                onHide={() => setShowModal(false)}
+                loadServices={loadServices} 
+            />
         </Container>
     );
 }

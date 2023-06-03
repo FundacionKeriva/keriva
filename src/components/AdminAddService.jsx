@@ -56,7 +56,6 @@ export default function AddServiceForm(props) {
       console.error(error);
       alert("fail creating service");
     }
-
   };
 
   const updateServiceClick = (event) => {
