@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Row, Container, Button, OverlayTrigger, Tooltip } from "react-bootstrap";
+import { MdEditSquare, MdDelete } from 'react-icons/md';
 import { getServices } from '../../api';
 import "./adminDashboard.css";
 import ModalAddService from "./AddService";
@@ -32,12 +33,6 @@ export default function Dashboard() {
         width: "200px"
     }
     const styleWatchImage = {
-        background: "#6c2760",
-        borderColor: "transparent",
-        boxShadow: "0 3px 4px rgba(1, 1, 1, 1)",
-        width: "110px"
-    }
-    const styleEdit = {
         background: "#6c2760",
         borderColor: "transparent",
         boxShadow: "0 3px 4px rgba(1, 1, 1, 1)",
@@ -103,9 +98,15 @@ export default function Dashboard() {
                                     </td>
                                     <td>
                                         <div style={{ display: "flex", justifyContent: "center" }}>
-                                            <Button style={styleEdit}
-                                                onClick={() => { }}
-                                            >Editar</Button>
+                                            <span style={{ marginRight: "10px" }} >
+                                                <MdEditSquare size={40} color="#6c2760"
+                                                    style={{ boxShadow: "0 3px 4px rgba(1, 1, 1, .1)", cursor: "pointer" }}
+                                                />
+                                            </span>
+                                            <span >
+                                                <MdDelete size={40} color="#6c2760"
+                                                    style={{ boxShadow: "0 3px 4px rgba(1, 1, 1, .1)", cursor: "pointer" }} />
+                                            </span>
                                         </div>
                                     </td>
                                 </tr>
@@ -118,7 +119,7 @@ export default function Dashboard() {
             <ModalAddService
                 show={showModal}
                 onHide={() => setShowModal(false)}
-                loadServices={loadServices} 
+                loadServices={loadServices}
             />
         </Container>
     );

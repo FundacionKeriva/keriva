@@ -8,6 +8,9 @@ npm run deploy
 npm install gh-pages --save-dev
 npm install react-bootstrap bootstrap
 npm install bootstrap y agregamos en index.js: import 'bootstrap/dist/css/bootstrap.min.css';
+npm install fullpage.js
+npm install react-icons --save
+
 
 *navegacion*
 npm install react-router-dom@6.4.1
