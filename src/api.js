@@ -3,29 +3,47 @@ import {dbRealmtime,storageFiles} from './firebase';
 export const db = dbRealmtime;
 export const storage = storageFiles; // agrega esto para acceder a Firebase Storage
 
-export const getServices = () => {
-  return db.ref('services').once('value').then((snapshot) => {
-    const servicesData = snapshot.val();
-    if (servicesData) {
-      const servicesArray = Object.entries(servicesData).map(([key, value]) => {
-        return { id: key, ...value };
-      });
-      return servicesArray;
-    }
-    return [];
-  });
+export const getServices = async () => {
+  const snapshot = await db.ref('services').once('value');
+  const servicesData = snapshot.val();
+  if (servicesData) {
+    const servicesArray = Object.entries(servicesData).map(([key, value]) => {
+      return { id: key, ...value };
+    });
+    return servicesArray;
+  }
+  return [];
 };
 
-export const addService = async(name, price, description,imageFile) => {
+export const getAvailableServices = async () => {
+  const snapshot = await db.ref('services').once('value');
+  const servicesData = snapshot.val();
+  if (servicesData) {
+    const servicesArray = Object.entries(servicesData)
+      .map(([key, value]) => {
+        return { id: key, ...value };
+      })
+      .filter((service) => service.available === true); // Filtrar servicios disponibles
+    return servicesArray;
+  }
+  return [];
+};
+
+//service: name string, price string, description string, imageUrl string, available boolean
+export const addService = async(name, price, description,imageFile, available) => {
   //load image to firebase
   const imageUrl= await uploadImage(imageFile);
 
   //add service to realtime database
-  return db.ref('services').push({ name, price, description,imageUrl });
+  return db.ref('services').push({ name, price, description,imageUrl,available });
 };
 
 export const updateService = (id, name, price, description) => {
   return db.ref('services/' + id).set({ name, price, description });
+};
+
+export const setServiceAvailability = (id, available) => {
+  return db.ref('services/' + id).update({ available });
 };
 
 export const deleteService = (id) => {

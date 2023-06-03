@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { Row, Container, Button, OverlayTrigger, Tooltip, Modal } from "react-bootstrap";
+import { Row, Container, Button, OverlayTrigger, Tooltip, Modal, Form } from "react-bootstrap";
 import { MdEditSquare, MdDelete } from 'react-icons/md';
-import { getServices, deleteService } from '../../api';
+import { getServices,setServiceAvailability ,deleteService } from '../../api';
 import "./adminDashboard.css";
 import ModalAddService from "./AddService";
 
@@ -27,15 +27,21 @@ export default function Dashboard() {
         });
     }
 
+    const handleNewServiceClick = (service) => {
+        setShowModal(true);
+    };
+
+    const handleServiceAvailabilityChange = (id,checked) => {
+        const updatedAvailability = checked ? true : false;
+        setServiceAvailability(id,updatedAvailability);
+        loadServices();
+    };
+
     const deleteServiceConfirm = () => {
         deleteService(currentService.id).then(() => {
             setDeleteModalShow(false)
             loadServices();
         });
-    };
-
-    const handleNewServiceClick = (service) => {
-        setShowModal(true);
     };
 
     const handleDeleteIconClick = (service) => {
@@ -81,6 +87,9 @@ export default function Dashboard() {
                                     ID
                                 </th>
                                 <th>
+                                    Disponible
+                                </th>
+                                <th>
                                     Nombre
                                 </th>
                                 <th>
@@ -99,6 +108,17 @@ export default function Dashboard() {
                             {services.map((service, index) => (
                                 <tr key={`tabLS-${service.id}`}>
                                     <td>{index + 1}</td>
+                                    <td>
+                                        <div>
+                                            <Form.Check
+                                                type="switch"
+                                                id={`service-switch-${service.id}`}
+                                                label={service.available ? 'Disponible' : 'No disponible'}
+                                                checked={service.available}
+                                                onChange={(e) => handleServiceAvailabilityChange(service.id, e.target.checked)}
+                                            />
+                                        </div>
+                                    </td>
                                     <td>{service.name}</td>
                                     <td>{service.price}</td>
                                     <td>{service.description}</td>
@@ -147,11 +167,11 @@ export default function Dashboard() {
                             <Modal.Title>Confirmar eliminación</Modal.Title>
                         </Modal.Header>
                         <Modal.Body>
-                            ¿Estás seguro de que deseas eliminar el servicio <strong>{currentService.name}?</strong> 
+                            ¿Estás seguro de que deseas eliminar el servicio <strong>{currentService.name}?</strong>
                         </Modal.Body>
                         <Modal.Footer>
                             <Button variant="secondary" onClick={() => setDeleteModalShow(false)}>Cancelar</Button>
-                            <Button variant="danger" onClick={()=>deleteServiceConfirm()}>Eliminar</Button>
+                            <Button variant="danger" onClick={() => deleteServiceConfirm()}>Eliminar</Button>
                         </Modal.Footer>
                     </Modal>
                 )
