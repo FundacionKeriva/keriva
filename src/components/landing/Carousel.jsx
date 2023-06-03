@@ -71,8 +71,9 @@ export default function CarouselServices() {
                     </Col>
                     <Col>
                         <Button style={{
-                            background: buttonHover ? "#974784" : "#941276",
-                            borderColor: "transparent"
+                            background: buttonHover ? "#ee66aa" : "#ee00aa",
+                            borderColor: "transparent",
+                            boxShadow: "0 3px 4px rgba(1, 1, 1, 1)"
                         }}
                             onClick={navigateToCatalog}
                             onMouseEnter={() => setButtonHover(true)}
