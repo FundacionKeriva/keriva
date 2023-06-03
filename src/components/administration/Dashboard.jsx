@@ -144,18 +144,30 @@ export default function Dashboard() {
                                     </td>
                                     <td>
                                         <div style={{ display: "flex", justifyContent: "center" }}>
-                                            <span style={{ marginRight: "10px" }} >
-                                                <MdEditSquare size={40} color="#6c2760"
-                                                    style={{ boxShadow: "0 3px 4px rgba(1, 1, 1, .1)", cursor: "pointer" }}
-                                                    onClick={() => handleUpdateIconClick(service)}
-                                                />
-                                            </span>
-                                            <span >
-                                                <MdDelete size={40} color="#6c2760"
-                                                    style={{ boxShadow: "0 3px 4px rgba(1, 1, 1, .1)", cursor: "pointer" }}
-                                                    onClick={() => handleDeleteIconClick(service)} />
-                                            </span>
-
+                                            <OverlayTrigger
+                                                placement="right"
+                                                delay={{ show: 250, hide: 400 }}
+                                                overlay={<Tooltip id="button-tooltip" >Editar</Tooltip>}
+                                            >
+                                                <span style={{ marginRight: "10px" }} >
+                                                    <MdEditSquare size={40} color="#6c2760"
+                                                        style={{ boxShadow: "0 3px 4px rgba(1, 1, 1, .1)", cursor: "pointer" }}
+                                                        onClick={() => handleUpdateIconClick(service)}
+                                                    />
+                                                </span>
+                                            </OverlayTrigger>
+                                            
+                                            <OverlayTrigger
+                                                placement="right"
+                                                delay={{ show: 250, hide: 400 }}
+                                                overlay={<Tooltip id="button-tooltip-delete" >Eliminar</Tooltip>}
+                                            >
+                                                <span >
+                                                    <MdDelete size={40} color="#6c2760"
+                                                        style={{ boxShadow: "0 3px 4px rgba(1, 1, 1, .1)", cursor: "pointer" }}
+                                                        onClick={() => handleDeleteIconClick(service)} />
+                                                </span>
+                                            </OverlayTrigger>
                                         </div>
                                     </td>
                                 </tr>
