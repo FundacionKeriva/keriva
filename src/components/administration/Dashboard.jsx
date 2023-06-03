@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Row, Container, Button, OverlayTrigger, Tooltip, Modal, Form } from "react-bootstrap";
 import { MdEditSquare, MdDelete } from 'react-icons/md';
+import { RiImageEditFill } from 'react-icons/ri';
 import { getServices, setServiceAvailability, deleteService } from '../../api';
 import "./adminDashboard.css";
 import ModalAddService from "./AddService";
@@ -145,7 +146,7 @@ export default function Dashboard() {
                                     <td>
                                         <div style={{ display: "flex", justifyContent: "center" }}>
                                             <OverlayTrigger
-                                                placement="right"
+                                                placement="top"
                                                 delay={{ show: 250, hide: 400 }}
                                                 overlay={<Tooltip id="button-tooltip" >Editar</Tooltip>}
                                             >
@@ -156,16 +157,28 @@ export default function Dashboard() {
                                                     />
                                                 </span>
                                             </OverlayTrigger>
-                                            
+
                                             <OverlayTrigger
-                                                placement="right"
+                                                placement="top"
                                                 delay={{ show: 250, hide: 400 }}
-                                                overlay={<Tooltip id="button-tooltip-delete" >Eliminar</Tooltip>}
+                                                overlay={<Tooltip id="button-tooltip-delete">Eliminar</Tooltip>}
                                             >
-                                                <span >
+                                                <span style={{ marginRight: "10px" }}>
                                                     <MdDelete size={40} color="#6c2760"
                                                         style={{ boxShadow: "0 3px 4px rgba(1, 1, 1, .1)", cursor: "pointer" }}
                                                         onClick={() => handleDeleteIconClick(service)} />
+                                                </span>
+                                            </OverlayTrigger>
+
+                                            <OverlayTrigger
+                                                placement="top"
+                                                delay={{ show: 250, hide: 400 }}
+                                                overlay={<Tooltip id="button-tooltip-image" >Cambiar imagen</Tooltip>}
+                                            >
+                                                <span >
+                                                    <RiImageEditFill size={40} color="#6c2760"
+                                                        style={{ boxShadow: "0 3px 4px rgba(1, 1, 1, .1)", cursor: "pointer" }}
+                                                    />
                                                 </span>
                                             </OverlayTrigger>
                                         </div>
