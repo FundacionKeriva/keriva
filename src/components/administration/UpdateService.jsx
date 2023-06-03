@@ -8,14 +8,12 @@ const EditModal = ({ show, onHide, loadServices, service }) => {
     const [name, setName] = useState("");
     const [price, setPrice] = useState("");
     const [description, setDescription] = useState("");
-    const [imageUrl, setImageUrl] = useState("");
 
     useEffect(() => {
         if (service) {
             setName(service.name);
             setPrice(service.price);
             setDescription(service.description);
-            setImageUrl(service.imageUrl);
         }
     }, [service]);
 
@@ -44,7 +42,7 @@ const EditModal = ({ show, onHide, loadServices, service }) => {
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            await updateService(service.id, name, price, description, imageUrl).then(() => {
+            await updateService(service.id, name, price, description).then(() => {
                 //close modal and load services
                 onHide();
                 loadServices();

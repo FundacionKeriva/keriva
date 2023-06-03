@@ -38,9 +38,21 @@ export const addService = async (name, price, description, imageFile, available)
   return db.ref('services').push({ name, price, description, imageUrl, available });
 };
 
-export const updateService = (id, name, price, description, imageUrl) => {
-  return db.ref('services/' + id).set({ name, price, description, imageUrl });
+export const updateService = (id, name, price, description) => {
+  const updatedData = {};
+
+  if (name) {
+    updatedData.name = name;
+  }
+  if (price) {
+    updatedData.price = price;
+  }
+  if (description) {
+    updatedData.description = description;
+  }
+  return db.ref('services/' + id).update(updatedData);
 };
+
 
 export const setServiceAvailability = (id, available) => {
   return db.ref('services/' + id).update({ available });
