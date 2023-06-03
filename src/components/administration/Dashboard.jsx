@@ -1,16 +1,21 @@
 import React, { useState, useEffect } from "react";
-import { Row, Container, Button, OverlayTrigger, Tooltip } from "react-bootstrap";
+import { Row, Container, Button, OverlayTrigger, Tooltip, Modal } from "react-bootstrap";
 import { MdEditSquare, MdDelete } from 'react-icons/md';
-import { getServices } from '../../api';
+import { getServices, deleteService } from '../../api';
 import "./adminDashboard.css";
 import ModalAddService from "./AddService";
 
 export default function Dashboard() {
     const [services, setServices] = useState([]);
+    const [currentService, setCurrentService] = useState({});
     const [newServiceHover, setNewServiceHover] = useState(false);
 
-    //modal
+    //modal Add service
     const [showModal, setShowModal] = useState(false);
+
+    //modal delete service
+    const [deleteModalShow, setDeleteModalShow] = useState(false);
+
 
     useEffect(() => {
         loadServices();
@@ -22,8 +27,20 @@ export default function Dashboard() {
         });
     }
 
+    const deleteServiceConfirm = () => {
+        deleteService(currentService.id).then(() => {
+            setDeleteModalShow(false)
+            loadServices();
+        });
+    };
+
     const handleNewServiceClick = (service) => {
         setShowModal(true);
+    };
+
+    const handleDeleteIconClick = (service) => {
+        setCurrentService(service);
+        setDeleteModalShow(true);
     };
 
     const styleNewService = {
@@ -105,15 +122,16 @@ export default function Dashboard() {
                                             </span>
                                             <span >
                                                 <MdDelete size={40} color="#6c2760"
-                                                    style={{ boxShadow: "0 3px 4px rgba(1, 1, 1, .1)", cursor: "pointer" }} />
+                                                    style={{ boxShadow: "0 3px 4px rgba(1, 1, 1, .1)", cursor: "pointer" }}
+                                                    onClick={() => handleDeleteIconClick(service)} />
                                             </span>
+
                                         </div>
                                     </td>
                                 </tr>
                             ))}
                         </tbody>
                     </table>
-
                 </div>
             </Row>
             <ModalAddService
@@ -121,6 +139,23 @@ export default function Dashboard() {
                 onHide={() => setShowModal(false)}
                 loadServices={loadServices}
             />
+            {/* Modal de confirmación */}
+            {
+                currentService && (
+                    <Modal show={deleteModalShow} onHide={() => setDeleteModalShow(false)}>
+                        <Modal.Header closeButton>
+                            <Modal.Title>Confirmar eliminación</Modal.Title>
+                        </Modal.Header>
+                        <Modal.Body>
+                            ¿Estás seguro de que deseas eliminar el servicio <strong>{currentService.name}?</strong> 
+                        </Modal.Body>
+                        <Modal.Footer>
+                            <Button variant="secondary" onClick={() => setDeleteModalShow(false)}>Cancelar</Button>
+                            <Button variant="danger" onClick={()=>deleteServiceConfirm()}>Eliminar</Button>
+                        </Modal.Footer>
+                    </Modal>
+                )
+            }
         </Container>
     );
 }

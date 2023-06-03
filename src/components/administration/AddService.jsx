@@ -47,16 +47,16 @@ const EditModal = ({ show, onHide, loadServices }) => {
         event.preventDefault();
         try {
             await addService(name, price, description, imageFile).then(() => {
+                //close modal and load services
+                onHide();
+                loadServices();
                 setName("");
                 setDescription("");
                 setPrice("");
                 setImageFile(null);
-                //close modal and load services
-                onHide();
-                loadServices();
             });
         } catch (error) {
-            alert("fail creating service");
+            alert("Una disculpa, ocurrio un error. Reintenta de nuevo por favor");
         }
     };
     return (
@@ -84,7 +84,7 @@ const EditModal = ({ show, onHide, loadServices }) => {
                             <Form.Group className="mb-3">
                                 <Form.Label>Horario</Form.Label>
                                 <Form.Control
-                                    placeholder="Ejemplo: Lunes a viernes 8 pm a 10 pm"
+                                    placeholder="Ejemplo: Lunes a Viernes. 8 pm a 10 pm"
                                     required
                                     type="text"
                                     autoFocus
@@ -109,7 +109,7 @@ const EditModal = ({ show, onHide, loadServices }) => {
                             <Form.Group className="mb-3" >
                                 <Row>
                                     <Col>
-                                        <Form.Label>Imagen</Form.Label>
+                                        <Form.Label>Imagen (JPG, PNG, GIF)</Form.Label>
                                         <Form.Control type="file" onChange={handleImageChange} required />
                                         <Form.Text className="text-secondary">Verifica que la imagen se ve a la derecha.</Form.Text>
                                     </Col>
