@@ -1,28 +1,26 @@
 
 import React, { useState, useEffect } from "react";
-import { useNavigate } from 'react-router-dom';
 import { Row, Col, Card, OverlayTrigger, Tooltip } from 'react-bootstrap';
-import { getServices } from '../../api';
+import { getAvailableServices } from '../../api';
 import "./catalog.css";
 
 export default function Services() {
-    const navigate = useNavigate();
     const [services, setServices] = useState([]);
 
     useEffect(() => {
-        getServices().then((servicesData) => {
+        getAvailableServices().then((servicesData) => {
             setServices(servicesData);
         });
     }, []);
 
     return (
-        <div style={{ textAlign: "center",justifyContent:"center" }}>
+        <div style={{ textAlign: "center", justifyContent: "center" }}>
             <br></br>
             <br></br>
             <h1 >Conoce nuestros servicios</h1>
             <br></br>
             {
-                services.length == 0 ?
+                services.length === 0 ?
                     (<h2>Lo sentimos, no hay servicios disponibles por el momento</h2>) :
                     (
                         <Row xs={1} md={1} lg={2} xl={3} className="g-4 justify-content-center cardC-container" >
