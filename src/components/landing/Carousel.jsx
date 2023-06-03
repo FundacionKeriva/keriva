@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
 import { Carousel, Image, Row, Col, Button } from 'react-bootstrap';
-import { getServices } from '../../api';
+import { getAvailableServices } from '../../api';
 import "./carousel.css";
 
 export default function CarouselServices() {
@@ -11,8 +11,7 @@ export default function CarouselServices() {
 
     useEffect(() => {
         // Obtiene los servicios de la base de datos al cargar el componente
-        getServices().then((servicesData) => {
-
+        getAvailableServices().then((servicesData) => {
             const firstThreeServices = servicesData.slice(0, 3);
             setServices(firstThreeServices);
         });
