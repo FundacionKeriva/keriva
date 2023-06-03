@@ -1,4 +1,4 @@
-import {dbRealmtime,storageFiles} from './firebase';
+import { dbRealmtime, storageFiles } from './firebase';
 
 export const db = dbRealmtime;
 export const storage = storageFiles; // agrega esto para acceder a Firebase Storage
@@ -30,16 +30,16 @@ export const getAvailableServices = async () => {
 };
 
 //service: name string, price string, description string, imageUrl string, available boolean
-export const addService = async(name, price, description,imageFile, available) => {
+export const addService = async (name, price, description, imageFile, available) => {
   //load image to firebase
-  const imageUrl= await uploadImage(imageFile);
+  const imageUrl = await uploadImage(imageFile);
 
   //add service to realtime database
-  return db.ref('services').push({ name, price, description,imageUrl,available });
+  return db.ref('services').push({ name, price, description, imageUrl, available });
 };
 
-export const updateService = (id, name, price, description) => {
-  return db.ref('services/' + id).set({ name, price, description });
+export const updateService = (id, name, price, description, imageUrl) => {
+  return db.ref('services/' + id).set({ name, price, description, imageUrl });
 };
 
 export const setServiceAvailability = (id, available) => {

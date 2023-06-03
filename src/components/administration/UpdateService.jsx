@@ -1,12 +1,23 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Modal, Button, Form, Row, Col } from 'react-bootstrap';
 import { updateService } from '../../api';
 
-const EditModal = ({ show, onHide, loadServices,service }) => {
+const EditModal = ({ show, onHide, loadServices, service }) => {
     const [buttonHover, setButtonHover] = useState(false);
-    const [name, setName] = useState(service.name);
-    const [price, setPrice] = useState(service.price);
-    const [description, setDescription] = useState(service.description);
+
+    const [name, setName] = useState("");
+    const [price, setPrice] = useState("");
+    const [description, setDescription] = useState("");
+    const [imageUrl, setImageUrl] = useState("");
+
+    useEffect(() => {
+        if (service) {
+            setName(service.name);
+            setPrice(service.price);
+            setDescription(service.description);
+            setImageUrl(service.imageUrl);
+        }
+    }, [service]);
 
     const styleButton = {
         background: buttonHover ? "#ee66aa" : "#ee00aa",
@@ -33,13 +44,10 @@ const EditModal = ({ show, onHide, loadServices,service }) => {
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            await updateService(service.id,name, price, description).then(() => {
+            await updateService(service.id, name, price, description, imageUrl).then(() => {
                 //close modal and load services
                 onHide();
                 loadServices();
-                setName("");
-                setDescription("");
-                setPrice("");
             });
         } catch (error) {
             alert("Una disculpa, ocurrio un error. Reintenta de nuevo por favor");
@@ -92,7 +100,7 @@ const EditModal = ({ show, onHide, loadServices,service }) => {
                                     min="1"
                                 />
                             </Form.Group>
-                            
+
                             <Button style={styleButton}
                                 onMouseEnter={() => setButtonHover(true)}
                                 onMouseLeave={() => setButtonHover(false)}
