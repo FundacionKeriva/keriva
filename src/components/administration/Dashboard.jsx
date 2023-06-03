@@ -4,6 +4,7 @@ import { MdEditSquare, MdDelete } from 'react-icons/md';
 import { getServices,setServiceAvailability ,deleteService } from '../../api';
 import "./adminDashboard.css";
 import ModalAddService from "./AddService";
+import ModalUpdateService from "./UpdateService";
 
 export default function Dashboard() {
     const [services, setServices] = useState([]);
@@ -11,7 +12,10 @@ export default function Dashboard() {
     const [newServiceHover, setNewServiceHover] = useState(false);
 
     //modal Add service
-    const [showModal, setShowModal] = useState(false);
+    const [showModalAdd, setShowModalAdd] = useState(false);
+
+     //modal Update service
+     const [showModalUpdate, setShowModalUpdate] = useState(false);
 
     //modal delete service
     const [deleteModalShow, setDeleteModalShow] = useState(false);
@@ -28,13 +32,18 @@ export default function Dashboard() {
     }
 
     const handleNewServiceClick = (service) => {
-        setShowModal(true);
+        setShowModalAdd(true);
     };
 
     const handleServiceAvailabilityChange = (id,checked) => {
         const updatedAvailability = checked ? true : false;
         setServiceAvailability(id,updatedAvailability);
         loadServices();
+    };
+    
+    const handleUpdateIconClick = (service) => {
+        setCurrentService(service);
+        setShowModalUpdate(true);
     };
 
     const deleteServiceConfirm = () => {
@@ -138,6 +147,7 @@ export default function Dashboard() {
                                             <span style={{ marginRight: "10px" }} >
                                                 <MdEditSquare size={40} color="#6c2760"
                                                     style={{ boxShadow: "0 3px 4px rgba(1, 1, 1, .1)", cursor: "pointer" }}
+                                                    onClick={() => handleUpdateIconClick(service)}
                                                 />
                                             </span>
                                             <span >
@@ -155,9 +165,16 @@ export default function Dashboard() {
                 </div>
             </Row>
             <ModalAddService
-                show={showModal}
-                onHide={() => setShowModal(false)}
+                show={showModalAdd}
+                onHide={() => setShowModalAdd(false)}
                 loadServices={loadServices}
+                
+            />
+            <ModalUpdateService
+                show={showModalUpdate}
+                onHide={() => setShowModalUpdate(false)}
+                loadServices={loadServices}
+                service={currentService}
             />
             {/* Modal de confirmación */}
             {

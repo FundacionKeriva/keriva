@@ -1,16 +1,15 @@
 import React, { useState } from "react";
 import { Modal, Button, Form, Row, Col } from 'react-bootstrap';
-import { addService } from '../../api';
+import { updateService } from '../../api';
 
-const AddModal = ({ show, onHide, loadServices }) => {
-    const [newServiceHover, setNewServiceHover] = useState(false);
-    const [name, setName] = useState('');
-    const [price, setPrice] = useState('');
-    const [description, setDescription] = useState('');
-    const [imageFile, setImageFile] = useState(null);
+const EditModal = ({ show, onHide, loadServices,service }) => {
+    const [buttonHover, setButtonHover] = useState(false);
+    const [name, setName] = useState(service.name);
+    const [price, setPrice] = useState(service.price);
+    const [description, setDescription] = useState(service.description);
 
-    const styleNewService = {
-        background: newServiceHover ? "#ee66aa" : "#ee00aa",
+    const styleButton = {
+        background: buttonHover ? "#ee66aa" : "#ee00aa",
         borderColor: "transparent",
         boxShadow: "0 3px 4px rgba(1, 1, 1, 1)",
         width: "200px"
@@ -31,29 +30,16 @@ const AddModal = ({ show, onHide, loadServices }) => {
         setDescription(event.target.value);
     };
 
-    const handleImageChange = (event) => {
-        const file = event.target.files[0];
-        const allowedTypes = ["image/jpeg", "image/png", "image/gif"];
-        if (file && allowedTypes.includes(file.type)) {
-            setImageFile(file);
-        } else {
-            setImageFile(null);
-            event.target.value = null;
-            alert("El archivo seleccionado no es una imagen válida. Por favor, seleccione un archivo de imagen (JPEG, PNG o GIF).");
-        }
-    };
-
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            await addService(name, price, description, imageFile,true).then(() => {
+            await updateService(service.id,name, price, description).then(() => {
                 //close modal and load services
                 onHide();
                 loadServices();
                 setName("");
                 setDescription("");
                 setPrice("");
-                setImageFile(null);
             });
         } catch (error) {
             alert("Una disculpa, ocurrio un error. Reintenta de nuevo por favor");
@@ -62,7 +48,7 @@ const AddModal = ({ show, onHide, loadServices }) => {
     return (
         <Modal show={show} onHide={onHide}>
             <Modal.Header closeButton>
-                <Modal.Title>Nuevo servicio</Modal.Title>
+                <Modal.Title>Editar servicio</Modal.Title>
             </Modal.Header>
             <Modal.Body>
                 <Row>
@@ -106,22 +92,11 @@ const AddModal = ({ show, onHide, loadServices }) => {
                                     min="1"
                                 />
                             </Form.Group>
-                            <Form.Group className="mb-3" >
-                                <Row>
-                                    <Col>
-                                        <Form.Label>Imagen (JPG, PNG, GIF)</Form.Label>
-                                        <Form.Control type="file" onChange={handleImageChange} required />
-                                        <Form.Text className="text-secondary">Verifica que la imagen se ve a la derecha.</Form.Text>
-                                    </Col>
-                                    <Col >
-                                        <img src={imageFile != null ? URL.createObjectURL(imageFile) : ""} alt="." style={{ maxHeight: "100px" }} />
-                                    </Col>
-                                </Row>
-                            </Form.Group>
-                            <Button style={styleNewService}
-                                onMouseEnter={() => setNewServiceHover(true)}
-                                onMouseLeave={() => setNewServiceHover(false)}
-                                type="submit">Generar servicio</Button>
+                            
+                            <Button style={styleButton}
+                                onMouseEnter={() => setButtonHover(true)}
+                                onMouseLeave={() => setButtonHover(false)}
+                                type="submit">Guardar cambios</Button>
                         </Form>
                     </Col>
                 </Row>
@@ -130,4 +105,4 @@ const AddModal = ({ show, onHide, loadServices }) => {
     );
 };
 
-export default AddModal;
+export default EditModal;
