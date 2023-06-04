@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Modal, Button, Form, Row, Col } from 'react-bootstrap';
-import { updateService } from '../../api';
+import { updateServiceImage } from '../../api';
 
 const ImageModal = ({ show, onHide, loadServices, service }) => {
     const [buttonHover, setButtonHover] = useState(false);
@@ -29,19 +29,16 @@ const ImageModal = ({ show, onHide, loadServices, service }) => {
     };
 
     const handleSubmit = async (event) => {
-        console.log("actualizar imagen");
-        /*
         event.preventDefault();
         try {
-            await updateServiceImage(service.id, imageUrl).then(() => {
-                //close modal and load services
+            await updateServiceImage(service.id, newImageUrl).then(() => {
                 onHide();
                 loadServices();
+                setNewImageUrl(null);
             });
         } catch (error) {
-            alert("Una disculpa, ocurrio un error. Reintenta de nuevo por favor");
+            alert("Una disculpa, ocurrio un error actualizando la imagen. Reintenta de nuevo por favor.");
         }
-        */
     };
 
     const styleButton = {
@@ -62,7 +59,7 @@ const ImageModal = ({ show, onHide, loadServices, service }) => {
                 <Row className="flex-wrap">
                     <Col sm={12} md={12} lg={4}>
                         <h4>Imagen actual</h4>
-                        <img src={imageUrl} alt="." style={{ maxHeight: "150px" }} />
+                        <img src={imageUrl} alt="." style={{ maxHeight: "140px" }} />
                     </Col>
                     <Col sm={12} md={12} lg={8}>
                         <h4>Nueva imagen (JPG, PNG, GIF)</h4>
@@ -75,7 +72,7 @@ const ImageModal = ({ show, onHide, loadServices, service }) => {
                                         <Form.Text className="text-secondary">Verifica que la imagen se vea a la derecha.</Form.Text>
                                     </Col>
                                     <Col >
-                                        <img src={newImageUrl != null ? URL.createObjectURL(newImageUrl) : ""} alt="." style={{ maxHeight: "150px" }} />
+                                        <img src={newImageUrl != null ? URL.createObjectURL(newImageUrl) : ""} alt="." style={{ maxHeight: "140px" }} />
                                     </Col>
                                 </Row>
                             </Form.Group>

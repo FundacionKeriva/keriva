@@ -57,6 +57,13 @@ export const updateServiceAvailability = (id, available) => {
   return db.ref('services/' + id).update({ available });
 };
 
+export const updateServiceImage = async (id, imageFile) => {
+  //load image to firebase
+  const imageUrl = await uploadImage(imageFile);
+
+  return db.ref('services/' + id).update({ imageUrl });
+};
+
 export const deleteService = (id) => {
   return db.ref('services/' + id).remove();
 };
