@@ -53,7 +53,7 @@ const ImageModal = ({ show, onHide, loadServices, service }) => {
             aria-labelledby="contained-modal-title-vcenter"
             centered>
             <Modal.Header closeButton>
-                <Modal.Title>Cambiar imagen del servicio {name}</Modal.Title>
+                <Modal.Title>Cambiar imagen del servicio: {name}</Modal.Title>
             </Modal.Header>
             <Modal.Body>
                 <Row className="flex-wrap">
