@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
 import { Carousel, Image, Row, Col, Button } from 'react-bootstrap';
-import { getAvailableServices } from '../../api';
+import { getAvailableServices } from '../../firebase/api';
 import "./carousel.css";
 
 export default function CarouselServices() {

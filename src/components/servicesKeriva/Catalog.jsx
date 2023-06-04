@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from "react";
 import { Row, Col, Card, OverlayTrigger, Tooltip } from 'react-bootstrap';
-import { getAvailableServices } from '../../api';
+import { getAvailableServices } from '../../firebase/api';
 import "./catalog.css";
 
 export default function Services() {

@@ -3,7 +3,7 @@ import { Row, Container, Button, OverlayTrigger, Tooltip, Modal, Form } from "re
 import { MdEditSquare, MdDelete } from 'react-icons/md';
 import { RiImageEditFill } from 'react-icons/ri';
 import { AppContext } from "../../Context/AppContext";
-import { getServices, updateServiceAvailability, deleteService, loginAdmin } from '../../api';
+import { getServices, updateServiceAvailability, deleteService, loginAdmin } from '../../firebase/api';
 
 import ModalAddService from "./AddService";
 import ModalUpdateService from "./UpdateService";

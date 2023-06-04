@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Modal, Button, Form, Row, Col } from 'react-bootstrap';
-import { updateService } from '../../api';
+import { updateService } from '../../firebase/api';
 
 const EditModal = ({ show, onHide, loadServices, service }) => {
     const [buttonHover, setButtonHover] = useState(false);

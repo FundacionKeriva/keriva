@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Modal, Button, Form, Row, Col } from 'react-bootstrap';
-import { updateServiceImage } from '../../api';
+import { updateServiceImage } from '../../firebase/api';
 
 const ImageModal = ({ show, onHide, loadServices, service }) => {
     const [buttonHover, setButtonHover] = useState(false);

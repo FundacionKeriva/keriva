@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Modal, Button, Form, Row, Col } from 'react-bootstrap';
-import { addService } from '../../api';
+import { addService } from '../../firebase/api';
 
 const AddModal = ({ show, onHide, loadServices }) => {
     const [newServiceHover, setNewServiceHover] = useState(false);
