@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Row, Container, Button, OverlayTrigger, Tooltip, Modal, Form } from "react-bootstrap";
 import { MdEditSquare, MdDelete } from 'react-icons/md';
-import { RiImageEditFill,RiEyeFill, RiEyeOffFill } from 'react-icons/ri';
+import { RiImageEditFill } from 'react-icons/ri';
 import { getServices, updateServiceAvailability, deleteService, loginAdmin } from '../../api';
 import "./adminDashboard.css";
 import ModalAddService from "./AddService";
@@ -17,7 +17,6 @@ export default function Dashboard() {
     const [isLoged, setIsLogged] = useState(false);
     const [loginCode, setLoginCode] = useState("");
     const [loginPassword, setLoginPassword] = useState("");
-    const [isPasswordVisible, setIsPasswordVisible] = useState(false);
     const [loginError,setLoginError]=useState(null);
 
     //modal Add service
@@ -86,10 +85,6 @@ export default function Dashboard() {
         setCurrentService(service);
         setDeleteModalShow(true);
     };
-
-    const togglePasswordVisibility = () => {
-        setIsPasswordVisible(!isPasswordVisible);
-      };
 
     const styleNewService = {
         background: newServiceHover ? "#ee66aa" : "#ee00aa",
