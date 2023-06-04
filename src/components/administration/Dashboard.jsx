@@ -14,7 +14,7 @@ export default function Dashboard() {
     const [newServiceHover, setNewServiceHover] = useState(false);
 
     //login
-    const [isLoged, setIsLogged] = useState(false);
+    const [isLogged, setIsLogged] = useState(sessionStorage.getItem('isLogged') === 'true' || false);
     const [loginCode, setLoginCode] = useState("");
     const [loginPassword, setLoginPassword] = useState("");
     const [loginError,setLoginError]=useState(null);
@@ -47,6 +47,7 @@ export default function Dashboard() {
         const result = await loginAdmin(loginCode, loginPassword);
 
         if (result) {
+            sessionStorage.setItem('isLogged', 'true');
             setIsLogged(true);
         } else {
             setLoginError(1);
@@ -100,9 +101,9 @@ export default function Dashboard() {
 
     return (
 
-        <Container className={isLoged?"":"form-container"}>
+        <Container className={isLogged?"":"form-container"}>
             {
-                isLoged ?
+                isLogged ?
                     <>
                         <Row >
                             <div style={{ textAlign: "center" }}>
