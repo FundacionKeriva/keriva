@@ -275,7 +275,7 @@ export default function Dashboard() {
                     <Form onSubmit={login} style={{width:"300px"}}>
                         <br />
                         <Form.Group className="mb-3">
-                            <Form.Label>Codido de acceso</Form.Label>
+                            <Form.Label>Código de acceso</Form.Label>
                             <Form.Control
                                 required
                                 type="text"
@@ -285,7 +285,7 @@ export default function Dashboard() {
                             />
                         </Form.Group>
                         <Form.Group className="mb-3">
-                            <Form.Label>Constraseña</Form.Label>
+                            <Form.Label>Contraseña</Form.Label>
                             <Form.Control
                                 required
                                 type="password"
@@ -295,11 +295,12 @@ export default function Dashboard() {
                             />
                             {loginError && <Form.Text className="text-danger">Credenciales incorrectas.</Form.Text>}
                         </Form.Group>
-
+                        <div style={{ display: 'flex', justifyContent: 'center' }}>
                         <Button style={styleNewService}
                             onMouseEnter={() => setNewServiceHover(true)}
                             onMouseLeave={() => setNewServiceHover(false)}
                             type="submit">Ingresar</Button>
+                            </div>
                     </Form>
             }
         </Container >
