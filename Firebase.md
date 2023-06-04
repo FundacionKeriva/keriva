@@ -3,6 +3,10 @@ contraseña:  4491888898
 Github:FundacionKeriva
 contraseña:4491888898k
 
+//administracion credencial
+codigo de acceso: keriva
+contraseña: 1234678
+
 *Servicios usados en firebase*
 ## realtime database
 {

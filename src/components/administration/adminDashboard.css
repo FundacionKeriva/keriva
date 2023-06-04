@@ -4,3 +4,9 @@
   opacity: 10;
   /* Establece la opacidad en 1 para que no haya transparencia */
 }
+
+.form-container {
+  display: flex;
+  justify-content: center; /* Centrar horizontalmente */
+  height: 100vh; /* Ajusta la altura según tus necesidades */
+}

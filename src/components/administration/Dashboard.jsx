@@ -49,7 +49,6 @@ export default function Dashboard() {
         if (result) {
             setIsLogged(true);
         } else {
-            console.log("credenciales invalidas");
             setLoginError(1);
         }
     };
@@ -101,7 +100,7 @@ export default function Dashboard() {
 
     return (
 
-        <Container>
+        <Container className={isLoged?"":"form-container"}>
             {
                 isLoged ?
                     <>
@@ -270,7 +269,7 @@ export default function Dashboard() {
                         }
                     </>
                     :
-                    <Form onSubmit={login}>
+                    <Form onSubmit={login} style={{width:"300px"}}>
                         <br />
                         <Form.Group className="mb-3">
                             <Form.Label>Codido de acceso</Form.Label>
