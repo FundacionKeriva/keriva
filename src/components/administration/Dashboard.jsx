@@ -54,7 +54,7 @@ export default function Dashboard() {
         }
     };
 
-    function handleNewServiceClick(service) {
+    function handleNewServiceClick() {
         setShowModalAdd(true);
     }
 
