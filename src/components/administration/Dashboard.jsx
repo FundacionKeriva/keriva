@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Row, Container, Button, OverlayTrigger, Tooltip, Modal, Form } from "react-bootstrap";
 import { MdEditSquare, MdDelete } from 'react-icons/md';
 import { RiImageEditFill } from 'react-icons/ri';
-import { getServices, setServiceAvailability, deleteService } from '../../api';
+import { getServices, updateServiceAvailability, deleteService } from '../../api';
 import "./adminDashboard.css";
 import ModalAddService from "./AddService";
 import ModalUpdateService from "./UpdateService";
@@ -42,7 +42,7 @@ export default function Dashboard() {
 
     const handleServiceAvailabilityChange = (id, checked) => {
         const updatedAvailability = checked ? true : false;
-        setServiceAvailability(id, updatedAvailability);
+        updateServiceAvailability(id, updatedAvailability);
         loadServices();
     };
 

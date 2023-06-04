@@ -53,8 +53,7 @@ export const updateService = (id, name, price, description) => {
   return db.ref('services/' + id).update(updatedData);
 };
 
-
-export const setServiceAvailability = (id, available) => {
+export const updateServiceAvailability = (id, available) => {
   return db.ref('services/' + id).update({ available });
 };
 
