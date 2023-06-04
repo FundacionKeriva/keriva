@@ -81,3 +81,25 @@ export const uploadImage = async (file) => {
   const url = await storageRef.getDownloadURL();
   return url;
 };
+
+
+//auth
+export const addUser = async (code, password) => {
+  return db.ref('users').push({ code, password });
+};
+
+export const loginAdmin = async (code, password) => {
+  const usersRef = db.ref('users');
+  const snapshot = await usersRef.once('value');
+  const users = snapshot.val();
+
+  // validate credential
+  for (const userId in users) {
+    const user = users[userId];
+    if (user.code === code && user.password === password) {
+      return true;
+    }
+  }
+
+  return false;
+};
