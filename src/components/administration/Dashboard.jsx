@@ -6,6 +6,7 @@ import { getServices, setServiceAvailability, deleteService } from '../../api';
 import "./adminDashboard.css";
 import ModalAddService from "./AddService";
 import ModalUpdateService from "./UpdateService";
+import ModalUpdateImage from "./UpdateImage";
 
 export default function Dashboard() {
     const [services, setServices] = useState([]);
@@ -17,6 +18,9 @@ export default function Dashboard() {
 
     //modal Update service
     const [showModalUpdate, setShowModalUpdate] = useState(false);
+
+    //modal Update image service
+    const [showModalUpdateImage, setShowModalUpdateImage] = useState(false);
 
     //modal delete service
     const [deleteModalShow, setDeleteModalShow] = useState(false);
@@ -45,6 +49,11 @@ export default function Dashboard() {
     const handleUpdateIconClick = (service) => {
         setCurrentService(service);
         setShowModalUpdate(true);
+    };
+
+    const handleUpdateImageIconClick = (service) => {
+        setCurrentService(service);
+        setShowModalUpdateImage(true);
     };
 
     const deleteServiceConfirm = () => {
@@ -161,26 +170,29 @@ export default function Dashboard() {
                                             <OverlayTrigger
                                                 placement="top"
                                                 delay={{ show: 250, hide: 400 }}
-                                                overlay={<Tooltip id="button-tooltip-delete">Eliminar</Tooltip>}
+                                                overlay={<Tooltip id="button-tooltip-image" >Cambiar imagen</Tooltip>}
                                             >
                                                 <span style={{ marginRight: "10px" }}>
-                                                    <MdDelete size={40} color="#6c2760"
+                                                    <RiImageEditFill size={40} color="#6c2760"
                                                         style={{ boxShadow: "0 3px 4px rgba(1, 1, 1, .1)", cursor: "pointer" }}
-                                                        onClick={() => handleDeleteIconClick(service)} />
+                                                        onClick={() => handleUpdateImageIconClick(service)}
+                                                    />
                                                 </span>
                                             </OverlayTrigger>
 
                                             <OverlayTrigger
                                                 placement="top"
                                                 delay={{ show: 250, hide: 400 }}
-                                                overlay={<Tooltip id="button-tooltip-image" >Cambiar imagen</Tooltip>}
+                                                overlay={<Tooltip id="button-tooltip-delete">Eliminar</Tooltip>}
                                             >
                                                 <span >
-                                                    <RiImageEditFill size={40} color="#6c2760"
+                                                    <MdDelete size={40} color="#6c2760"
                                                         style={{ boxShadow: "0 3px 4px rgba(1, 1, 1, .1)", cursor: "pointer" }}
-                                                    />
+                                                        onClick={() => handleDeleteIconClick(service)} />
                                                 </span>
                                             </OverlayTrigger>
+
+
                                         </div>
                                     </td>
                                 </tr>
@@ -201,6 +213,16 @@ export default function Dashboard() {
                     <ModalUpdateService
                         show={showModalUpdate}
                         onHide={() => setShowModalUpdate(false)}
+                        loadServices={loadServices}
+                        service={currentService}
+                    />
+                )
+            }
+            {
+                currentService && (
+                    <ModalUpdateImage
+                        show={showModalUpdateImage}
+                        onHide={() => setShowModalUpdateImage(false)}
                         loadServices={loadServices}
                         service={currentService}
                     />
