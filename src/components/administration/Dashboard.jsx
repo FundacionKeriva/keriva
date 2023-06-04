@@ -1,12 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Row, Container, Button, OverlayTrigger, Tooltip, Modal, Form } from "react-bootstrap";
 import { MdEditSquare, MdDelete } from 'react-icons/md';
 import { RiImageEditFill } from 'react-icons/ri';
+import { AppContext } from "../../Context/AppContext";
 import { getServices, updateServiceAvailability, deleteService, loginAdmin } from '../../api';
-import "./adminDashboard.css";
+
 import ModalAddService from "./AddService";
 import ModalUpdateService from "./UpdateService";
 import ModalUpdateImage from "./UpdateImage";
+import "./adminDashboard.css";
 
 export default function Dashboard() {
     const [services, setServices] = useState([]);
@@ -14,7 +16,7 @@ export default function Dashboard() {
     const [newServiceHover, setNewServiceHover] = useState(false);
 
     //login
-    const [isLogged, setIsLogged] = useState(sessionStorage.getItem('isLogged') === 'true' || false);
+    const {isLogged, setIsLogged} = useContext(AppContext);
     const [loginCode, setLoginCode] = useState("");
     const [loginPassword, setLoginPassword] = useState("");
     const [loginError,setLoginError]=useState(null);
