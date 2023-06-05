@@ -1,13 +1,14 @@
 {
   "files": {
-    "main.css": "/keriva/static/css/main.feafdcfa.css",
+    "main.css": "/keriva/static/css/main.a2e917ff.css",
     "main.js": "/keriva/static/js/main.1aff5fff.js",
+    "static/media/catalog-card.jpg": "/keriva/static/media/catalog-card.74fabc97e4f1f36b3a63.jpg",
     "index.html": "/keriva/index.html",
-    "main.feafdcfa.css.map": "/keriva/static/css/main.feafdcfa.css.map",
+    "main.a2e917ff.css.map": "/keriva/static/css/main.a2e917ff.css.map",
     "main.1aff5fff.js.map": "/keriva/static/js/main.1aff5fff.js.map"
   },
   "entrypoints": [
-    "static/css/main.feafdcfa.css",
+    "static/css/main.a2e917ff.css",
     "static/js/main.1aff5fff.js"
   ]
 }
