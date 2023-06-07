@@ -4,6 +4,7 @@ import fullpage from "fullpage.js";
 import "./landing.css"; 
 
 import Carousel from "./Carousel";
+import Footer from "./Footer";
 
 export default function LandPage() {
   const fullpageRef = useRef(null);
@@ -30,7 +31,7 @@ export default function LandPage() {
         <h1>Contactanos</h1>
       </div>
       <div className="section section-footer">
-        <h1>Footer</h1>
+        <Footer/>
       </div>
     </div>
   );

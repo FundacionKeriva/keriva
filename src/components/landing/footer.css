@@ -1,0 +1,216 @@
+.footer {
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    padding: 20px;
+    overflow: hidden;
+}
+
+.footer p {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+   font-weight: bold;
+}
+
+.footer parrafo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+}
+
+
+@keyframes floating {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.bubble-container {
+    position: relative;
+}
+
+.bubble {
+
+    position: absolute;
+    border-radius: 50%;
+    animation-name: floating;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+.bubble-1 {
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    width: 170px;
+    height: 170px;
+    top: 130px;
+    left: -70px;
+    animation-delay: 0s;
+    background-color: rgba(36, 255, 255, 0.8);
+}
+
+.bubble-2 {
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    width: 160px;
+    height: 160px;
+    top: 310px;
+    left: 110px;
+    animation-delay: 0.5s;
+    background-color: rgb(131, 47, 168);
+}
+
+.bubble-3 {
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    width: 120px;
+    height: 120px;
+    top: 460px;
+    left: 260px;
+    animation-delay: 0.5s;
+    background-color: rgba(137, 216, 91, 0.8);
+}
+
+
+.bubble-4 {
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    width: 170px;
+    height: 170px;
+    top: 460px;
+    left: 500px;
+    animation-delay: 1s;
+    background-color: rgb(249, 244, 44);
+}
+
+.bubble-5 {
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    width: 110px;
+    height: 110px;
+    top: 370px;
+    left: 545px;
+    animation-delay: 1.5s;
+    background-color: rgb(246, 97, 158);
+}
+
+.bubble-6 {
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    width: 130px;
+    height: 130px;
+    top: 400px;
+    left: 615px;
+    animation-delay: 1.5s;
+    background-color: rgba(68, 247, 157, 0.8);
+}
+
+.bubble-7 {
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    width: 115px;
+    height: 115px;
+    top: 360px;
+    left: 850px;
+    animation-delay: 0.5s;
+    background-color: rgba(162, 250, 81, 0.8);
+}
+
+.bubble-8 {
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    width: 190px;
+    height: 190px;
+    top: 400px;
+    left: 1100px;
+    animation-delay: 1.5s;
+    background-color: rgb(18, 6, 238);
+}
+
+.bubble-9 {
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    width: 230px;
+    height: 230px;
+    top: 190px;
+    left: 1200px;
+    animation-delay: 1.5s;
+    background-color: rgba(248, 178, 245, 0.8);
+}
+
+.bubble-10 {
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    width: 170px;
+    height: 170px;
+    top: 10px;
+    left: 1140px;
+    animation-delay: 1.5s;
+    background-color: rgba(112, 211, 206, 0.8);
+}
+
+.bubble-11 {
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    width: 140px;
+    height: 140px;
+    top: 60px;
+    left: 1020px;
+    animation-delay: 1.5s;
+    background-color: rgb(247, 68, 187, 0.8);
+}
+
+.bubble-12 {
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    width: 120px;
+    height: 120px;
+    top: -40px;
+    left: 700px;
+    animation-delay: 1.5s;
+    background-color: rgb(236, 101, 33);
+}
+
+.bubble-13 {
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    width: 150px;
+    height: 150px;
+    top: -70px;
+    left: 100px;
+    animation-delay: 1.5s;
+    background-color: rgba(255, 147, 59, 0.8);
+}
+
+.bubble-14 {
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    width: 80px;
+    height: 80px;
+    top: 50px;
+    left: 140px;
+    animation-delay: 1.5s;
+    background-color: rgba(155, 97, 49, 0.8);
+}
+
+.bubble-15 {
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    width: 150px;
+    height: 150px;
+    top: 40px;
+    left: 400px;
+    animation-delay: 1.5s;
+    background-color: rgba(225, 0, 255, 0.8);
+}
+
+.bubble-16 {
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    width: 90px;
+    height: 90px;
+    top: 140px;
+    left: 360px;
+    animation-delay: 1.5s;
+    background-color: rgba(207, 252, 47, 0.8);
+}
