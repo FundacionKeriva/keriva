@@ -8,13 +8,14 @@
 }
 
 .footer p {
-    margin-top: 20px;
+    margin-top: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     color: #000000;
    font-weight: bold;
+   font-size: 25px;
 }
 
 .footer parrafo {
@@ -23,6 +24,7 @@
     align-items: center;
     text-align: center;
     color: #000000;
+    font-size: 19px;
 }
 
 
@@ -119,7 +121,7 @@
     border: 2px solid rgba(255, 255, 255, 0.8);
     width: 115px;
     height: 115px;
-    top: 360px;
+    top: 370px;
     left: 850px;
     animation-delay: 0.5s;
     background-color: rgba(162, 250, 81, 0.8);
