@@ -38,7 +38,7 @@ export default function Footer() {
                 </a>
             </div>
 
-            <p>¿Quienes somos?</p>
+            <p>¿Quiénes somos?</p>
 
             <parrafo>Somos una Asociación Civil sin fines de lucro, cuyo objetivo es luchar por el desarrollo integral </parrafo>
             <parrafo> de la persona. Por eso que contamos con una gran variadad de cursos y actividades.</parrafo>
