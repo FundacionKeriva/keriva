@@ -7,7 +7,7 @@ import "../components-css/navigation.css";
 export default function UserNavigation() {
 
     const [offcanvasShow, setOffcanvasShow] = useState(false);
-    const {isLogged}=useContext(AppContext);
+    const { isLogged } = useContext(AppContext);
 
     return (
         <Navbar className='navbar' expand="md" collapseOnSelect fixed="top" variant="dark">

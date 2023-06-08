@@ -1,18 +1,18 @@
 .section-carrusel {
-  color:aliceblue;
-  background:  #2f257d;
+  color: aliceblue;
+  background: #2f257d;
   width: 100vw;
-  max-height:  93vh;
+  max-height: 93vh;
 }
 
 .section-contacto {
-  background:#ffde33;
+  background: #ffde33;
   width: 100vw;
-  max-height:  100vh;
+  max-height: 100vh;
 }
 
 .section-footer {
   background: #94be28;
   width: 100vw;
-  max-height:  100vh;
+  max-height: 100vh;
 }

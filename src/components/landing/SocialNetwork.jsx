@@ -9,7 +9,7 @@ import whatsappImage from "../../images/whatsapp.png";
 export default function Footer() {
     const facebookUrl = 'https://www.facebook.com/KerivaAC';
     const instagramUrl = 'https://instagram.com/fundacion_kerivaac?igshid=MmJiY2I4NDBkZg==';
-    
+
     return (
         <footer className="footer">
             <div className="bubble-container">

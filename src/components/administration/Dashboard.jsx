@@ -16,10 +16,10 @@ export default function Dashboard() {
     const [newServiceHover, setNewServiceHover] = useState(false);
 
     //login
-    const {isLogged, setIsLogged} = useContext(AppContext);
+    const { isLogged, setIsLogged } = useContext(AppContext);
     const [loginCode, setLoginCode] = useState("");
     const [loginPassword, setLoginPassword] = useState("");
-    const [loginError,setLoginError]=useState(null);
+    const [loginError, setLoginError] = useState(null);
 
     //modal Add service
     const [showModalAdd, setShowModalAdd] = useState(false);
@@ -103,7 +103,7 @@ export default function Dashboard() {
 
     return (
 
-        <Container className={isLogged?"":"form-container"}>
+        <Container className={isLogged ? "" : "form-container"}>
             {
                 isLogged ?
                     <>
@@ -272,7 +272,7 @@ export default function Dashboard() {
                         }
                     </>
                     :
-                    <Form onSubmit={login} style={{width:"300px"}}>
+                    <Form onSubmit={login} style={{ width: "300px" }}>
                         <br />
                         <Form.Group className="mb-3">
                             <Form.Label>Código de acceso</Form.Label>
@@ -281,7 +281,7 @@ export default function Dashboard() {
                                 type="text"
                                 autoFocus
                                 value={loginCode || ""}
-                                onChange={(e) =>{ setLoginCode(e.target.value);setLoginError(null)}}
+                                onChange={(e) => { setLoginCode(e.target.value); setLoginError(null) }}
                             />
                         </Form.Group>
                         <Form.Group className="mb-3">
@@ -291,16 +291,16 @@ export default function Dashboard() {
                                 type="password"
                                 autoFocus
                                 value={loginPassword || ""}
-                                onChange={(e) => {setLoginPassword(e.target.value);setLoginError(null)}}
+                                onChange={(e) => { setLoginPassword(e.target.value); setLoginError(null) }}
                             />
                             {loginError && <Form.Text className="text-danger">Credenciales incorrectas.</Form.Text>}
                         </Form.Group>
                         <div style={{ display: 'flex', justifyContent: 'center' }}>
-                        <Button style={styleNewService}
-                            onMouseEnter={() => setNewServiceHover(true)}
-                            onMouseLeave={() => setNewServiceHover(false)}
-                            type="submit">Ingresar</Button>
-                            </div>
+                            <Button style={styleNewService}
+                                onMouseEnter={() => setNewServiceHover(true)}
+                                onMouseLeave={() => setNewServiceHover(false)}
+                                type="submit">Ingresar</Button>
+                        </div>
                     </Form>
             }
         </Container >

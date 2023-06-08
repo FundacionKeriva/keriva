@@ -14,7 +14,7 @@ const EditModal = ({ show, onHide, loadServices, service }) => {
             setName(service.name || "");
             setPrice(service.price || "");
             setDescription(service.description || "");
-          }
+        }
     }, [service]);
 
     const styleButton = {
