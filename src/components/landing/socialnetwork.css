@@ -7,6 +7,16 @@
     overflow: hidden;
 }
 
+.content-container {
+    position: absolute;
+}
+
+.icon {
+    width: 150px;
+    height: 150px;
+    margin-right: 20px;
+}
+
 .footer p {
     margin-top: 5px;
     display: flex;
@@ -14,8 +24,8 @@
     align-items: center;
     text-align: center;
     color: #000000;
-   font-weight: bold;
-   font-size: 25px;
+    font-weight: bold;
+    font-size: 25px;
 }
 
 .footer parrafo {

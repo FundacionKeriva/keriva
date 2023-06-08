@@ -1,6 +1,9 @@
 import React from 'react';
 import './socialnetwork.css';
-import { Image } from 'react-bootstrap';
+import { Image, Row } from 'react-bootstrap';
+import facebookImage from "../../images/facebook.png";
+import instagramImage from "../../images/instagram.png";
+import whatsappImage from "../../images/whatsapp.png";
 
 
 export default function Footer() {
@@ -28,21 +31,25 @@ export default function Footer() {
                 <div className="bubble bubble-16"></div>
             </div>
 
-            <div style={{marginTop:"100px"}}>
-                <a href={facebookUrl} target="_blank" rel="noopener noreferrer">
-                    <Image src='https://static.vecteezy.com/system/resources/previews/018/930/476/non_2x/facebook-logo-facebook-icon-transparent-free-png.png' alt='Facebook' width="150" height="150" />
-                </a>
+            <Row className='content-container'>
+                <div style={{ marginTop: "60px" }}>
+                    <a href={facebookUrl} target="_blank" rel="noopener noreferrer">
+                        <Image className='icon' src={facebookImage} alt='Facebook' />
+                    </a>
 
-                <a href={instagramUrl} target="_blank" rel="noopener noreferrer">
-                    <Image src='https://i.pinimg.com/originals/3b/21/c7/3b21c7efd2ba9c119fb8d361acacc31d.png' alt='Instagram' width="120" height="120" />
-                </a>
-            </div>
+                    <a href={instagramUrl} target="_blank" rel="noopener noreferrer">
+                        <Image className='icon' src={instagramImage} alt='Instagram' />
+                    </a>
+                    <a href={instagramUrl} target="_blank" rel="noopener noreferrer">
+                        <Image className='icon' src={whatsappImage} alt='Whatsapp' />
+                    </a>
+                </div>
 
-            <p>¿Quiénes somos?</p>
+                <p>¿Quiénes somos?</p>
 
-            <parrafo>Somos una Asociación Civil sin fines de lucro, cuyo objetivo es luchar por el desarrollo integral </parrafo>
-            <parrafo> de la persona. Por eso que contamos con una gran variadad de cursos y actividades.</parrafo>
-
+                <parrafo>Somos una Asociación Civil sin fines de lucro, cuyo objetivo es luchar por el desarrollo integral </parrafo>
+                <parrafo> de la persona. Por eso que contamos con una gran variadad de cursos y actividades.</parrafo>
+            </Row>
         </footer>
     );
 }
