@@ -1,10 +1,10 @@
 import React, { useRef, useEffect } from "react";
 import "fullpage.js/dist/fullpage.css";
 import fullpage from "fullpage.js";
-import "./landing.css"; 
+import "./landing.css";
 
 import Carousel from "./Carousel";
-import Footer from "./Footer";
+import SocialNetwork from "./SocialNetwork";
 
 export default function LandPage() {
   const fullpageRef = useRef(null);
@@ -25,13 +25,13 @@ export default function LandPage() {
   return (
     <div ref={fullpageRef} className="fullpage-wrapper">
       <div className="section section-carrusel">
-        <Carousel/>
+        <Carousel />
       </div>
       <div className="section section-contacto">
-        <h1>Contactanos</h1>
+        <SocialNetwork />
       </div>
       <div className="section section-footer">
-        <Footer/>
+        <h1>Footer</h1>
       </div>
     </div>
   );
