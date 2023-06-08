@@ -31,7 +31,7 @@ export default function Footer() {
                 <div className="bubble bubble-16"></div>
             </div>
 
-            <Row className='content-container'>
+            <Row className='icons-container'>
                 <div style={{ marginTop: "60px" }}>
                     <a href={facebookUrl} target="_blank" rel="noopener noreferrer">
                         <Image className='icon' src={facebookImage} alt='Facebook' />
@@ -44,11 +44,13 @@ export default function Footer() {
                         <Image className='icon' src={whatsappImage} alt='Whatsapp' />
                     </a>
                 </div>
+                <div className='text-container' >
+                    <div style={{ maxWidth: "60%" }}>
+                        <p>¿Quiénes somos?</p>
+                        <parrafo>Somos una Asociación Civil sin fines de lucro, cuyo objetivo es luchar por el desarrollo integral de la persona. Por eso que contamos con una gran variadad de cursos y actividades. </parrafo>
+                    </div>
+                </div>
 
-                <p>¿Quiénes somos?</p>
-
-                <parrafo>Somos una Asociación Civil sin fines de lucro, cuyo objetivo es luchar por el desarrollo integral </parrafo>
-                <parrafo> de la persona. Por eso que contamos con una gran variadad de cursos y actividades.</parrafo>
             </Row>
         </footer>
     );
