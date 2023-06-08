@@ -28,13 +28,13 @@ export default function Footer() {
                 <div className="bubble bubble-16"></div>
             </div>
 
-            <div style={{marginTop:"130px"}}>
-                <a href={facebookUrl} target="_blank">
-                    <Image src='https://static.vecteezy.com/system/resources/previews/018/930/476/non_2x/facebook-logo-facebook-icon-transparent-free-png.png' alt='Facebook' width="100" height="100" />
+            <div style={{marginTop:"100px"}}>
+                <a href={facebookUrl} target="_blank" rel="noopener noreferrer">
+                    <Image src='https://static.vecteezy.com/system/resources/previews/018/930/476/non_2x/facebook-logo-facebook-icon-transparent-free-png.png' alt='Facebook' width="150" height="150" />
                 </a>
 
-                <a href={instagramUrl} target="_blank">
-                    <Image src='https://i.pinimg.com/originals/3b/21/c7/3b21c7efd2ba9c119fb8d361acacc31d.png' alt='Instagram' width="80" height="80" />
+                <a href={instagramUrl} target="_blank" rel="noopener noreferrer">
+                    <Image src='https://i.pinimg.com/originals/3b/21/c7/3b21c7efd2ba9c119fb8d361acacc31d.png' alt='Instagram' width="120" height="120" />
                 </a>
             </div>
 

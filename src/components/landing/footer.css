@@ -8,7 +8,7 @@
 }
 
 .footer p {
-    margin-top: 10px;
+    margin-top: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -101,7 +101,7 @@
     border: 2px solid rgba(255, 255, 255, 0.8);
     width: 110px;
     height: 110px;
-    top: 370px;
+    top: 385px;
     left: 545px;
     animation-delay: 1.5s;
     background-color: rgb(246, 97, 158);
@@ -121,7 +121,7 @@
     border: 2px solid rgba(255, 255, 255, 0.8);
     width: 115px;
     height: 115px;
-    top: 370px;
+    top: 390px;
     left: 850px;
     animation-delay: 0.5s;
     background-color: rgba(162, 250, 81, 0.8);
