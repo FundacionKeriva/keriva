@@ -1,14 +1,17 @@
 {
   "files": {
-    "main.css": "/keriva/static/css/main.a2e917ff.css",
-    "main.js": "/keriva/static/js/main.1aff5fff.js",
+    "main.css": "/keriva/static/css/main.f7757941.css",
+    "main.js": "/keriva/static/js/main.6e0a237d.js",
     "static/media/catalog-card.jpg": "/keriva/static/media/catalog-card.74fabc97e4f1f36b3a63.jpg",
+    "static/media/instagram.png": "/keriva/static/media/instagram.79535458a8a6d88f81d4.png",
+    "static/media/whatsapp.png": "/keriva/static/media/whatsapp.d026940870fb334920b7.png",
+    "static/media/facebook.png": "/keriva/static/media/facebook.a5def58db1e9c1b38269.png",
     "index.html": "/keriva/index.html",
-    "main.a2e917ff.css.map": "/keriva/static/css/main.a2e917ff.css.map",
-    "main.1aff5fff.js.map": "/keriva/static/js/main.1aff5fff.js.map"
+    "main.f7757941.css.map": "/keriva/static/css/main.f7757941.css.map",
+    "main.6e0a237d.js.map": "/keriva/static/js/main.6e0a237d.js.map"
   },
   "entrypoints": [
-    "static/css/main.a2e917ff.css",
-    "static/js/main.1aff5fff.js"
+    "static/css/main.f7757941.css",
+    "static/js/main.6e0a237d.js"
   ]
 }
