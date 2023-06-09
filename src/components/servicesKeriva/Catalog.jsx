@@ -14,7 +14,7 @@ export default function Services() {
     }, []);
 
     return (
-        <div style={{ textAlign: "center", justifyContent: "center" }}>
+        <div className="catalog-container">
             <br></br>
             <br></br>
             <h1 >Conoce nuestros servicios</h1>
