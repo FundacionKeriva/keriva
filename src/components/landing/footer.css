@@ -1,5 +1,4 @@
-
-.footer-container{
+.footer-container {
     color: #fff;
     height: 100vh;
     max-width: 100%;
@@ -9,23 +8,33 @@
     text-align: left;
 }
 
-
-.icon {
-    max-width: 50px;
-    max-height: 50px;
-    margin-right: 5px;
+.title{
+    font-size: 28px;
+    font-weight: 700;
 }
 
-.colc{
+.text{
+    font-size: 18px;
+    font-weight: 500;
+}
+
+
+.icon-footer {
+    max-width: 50px;
+    max-height: 50px;
+    margin-right: 10px;
+}
+
+.colc {
     height: 150px;
     max-height: 200px;
 }
 
 .purple-link {
     color: #ee00aa;
-  }
-  
-  .purple-link:hover {
-    color: darkviolet; /* Cambia el color al pasar el ratón por encima */
-  }
-  
+}
+
+.purple-link:hover {
+    color: darkviolet;
+    /* Cambia el color al pasar el ratón por encima */
+}

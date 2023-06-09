@@ -25,16 +25,15 @@ export default function LandPage() {
 
   return (
     <div ref={fullpageRef} className="fullpage-wrapper">
-      <div className="section section-footer">
-        <Footer />
-      </div>
       <div className="section section-carrusel">
         <Carousel />
       </div>
       <div className="section section-contacto">
         <SocialNetwork />
       </div>
-      
+      <div className="section section-footer">
+        <Footer />
+      </div>
     </div>
   );
 }

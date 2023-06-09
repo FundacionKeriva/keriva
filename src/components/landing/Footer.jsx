@@ -14,12 +14,13 @@ export default function Footer() {
     return (
         <Row className="footer-container" >
             <Col xs={10} md={3} className="colc">
-                <h3>Conoce Más</h3>
-                <p>Aquí puedes agregar tu texto sobre Conoce Más.</p>
+                <h3 className="title">Conoce más</h3>
+                <p className="text"> <i>"Es una fundación sin fines de lucro que apoya a distintos sectores como lo son adultos mayores, adolescentes y niños"</i></p>
+                <p>- Alejandro M</p>
             </Col>
             <Col xs={10} md={4} className="colc ">
-                <h3>Contáctanos</h3>
-                <ul>
+                <h3 className="title">Contáctanos</h3>
+                <ul className="text">
                     <li>Teléfono: 449 188 88 98</li>
                     <li>Whatsapp: <a
                         className="purple-link"
@@ -49,16 +50,16 @@ export default function Footer() {
                 </ul>
             </Col>
             <Col xs={10} md={3} className="colc">
-                <h3>Síguenos</h3>
+                <h3 className="title">Síguenos</h3>
                 <div>
                     <a href={facebookUrl} target="_blank" rel="noopener noreferrer">
-                        <Image className="icon" src={facebookImage} alt="Facebook" />
+                        <Image className="icon-footer" src={facebookImage} alt="Facebook" />
                     </a>
                     <a href={instagramUrl} target="_blank" rel="noopener noreferrer">
-                        <Image className="icon" src={instagramImage} alt="Facebook" />
+                        <Image className="icon-footer" src={instagramImage} alt="Facebook" />
                     </a>
                     <a href={whatsUrl} target="_blank" rel="noopener noreferrer">
-                        <Image className='icon' src={whatsappImage} alt='Whatsapp' />
+                        <Image className='icon-footer' src={whatsappImage} alt='Whatsapp' />
                     </a>
                 </div>
             </Col>

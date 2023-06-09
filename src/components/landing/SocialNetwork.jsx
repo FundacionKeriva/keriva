@@ -1,9 +1,9 @@
 import React from 'react';
-import './socialnetwork.css';
 import { Image, Row } from 'react-bootstrap';
 import facebookImage from "../../images/facebook.png";
 import instagramImage from "../../images/instagram.png";
 import whatsappImage from "../../images/whatsapp.png";
+import './socialnetwork.css';
 
 
 export default function Footer() {
