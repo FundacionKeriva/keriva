@@ -1,8 +1,7 @@
 .custom-card {
     position: relative;
-    transform-style: preserve-3d;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(1, 1, 1, 1);
+    box-shadow: 0 10px 9px rgba(0, 0, 0, 0.751);
     transition: transform 0.3s ease-in-out;
     animation: floating 3s infinite alternate;
 }

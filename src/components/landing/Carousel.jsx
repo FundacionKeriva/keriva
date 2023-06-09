@@ -35,14 +35,11 @@ export default function CarouselServices() {
                             alignItems: 'center',
                             textAlign: "center",
                             justifyContent: 'center',
-                            padding: '50px',
-                            backdropFilter: 'blur(10px)',
-                            background: 'rgba(255, 255, 255, 0.1)',
-                            perspective: "1000px"
+                            padding: '50px'
                         }}>
                             <Col>
                                 <div className="custom-card">
-                                    <Image src={service.imageUrl} rounded style={{ width: "370px", height: "370px" }} />
+                                    <Image src={service.imageUrl} rounded style={{ width: "370px", height: "370px",maxWidth:"370px" }} />
                                 </div>
                             </Col>
                             <Col>
@@ -59,9 +56,6 @@ export default function CarouselServices() {
                     textAlign: "center",
                     justifyContent: 'center',
                     padding: '50px',
-                    backdropFilter: 'blur(10px)',
-                    background: 'rgba(255, 255, 255, 0.1)',
-                    perspective: "1000px"
                 }}>
                     <Col>
                         <div className="custom-card">
