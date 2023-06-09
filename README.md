@@ -1,3 +1,6 @@
+Fundacion Keriva. Pagina web React & Firebase
+![Alt text](icon-keriva.jpg)
+
 *Ejecutar servidor*
 npm start
 
@@ -18,4 +21,3 @@ npm install react-router-dom@6.4.1
 
 *firebase* https://www.youtube.com/watch?v=2lkfcEsTkg0
 npm install firebase@9.6.7
-![Imagen danza](danzaInfantil.jpg)
