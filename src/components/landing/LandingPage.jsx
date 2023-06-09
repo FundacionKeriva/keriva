@@ -5,6 +5,7 @@ import "./landing.css";
 
 import Carousel from "./Carousel";
 import SocialNetwork from "./SocialNetwork";
+import Footer from "./Footer";
 
 export default function LandPage() {
   const fullpageRef = useRef(null);
@@ -24,15 +25,16 @@ export default function LandPage() {
 
   return (
     <div ref={fullpageRef} className="fullpage-wrapper">
+      <div className="section section-footer">
+        <Footer />
+      </div>
       <div className="section section-carrusel">
         <Carousel />
       </div>
       <div className="section section-contacto">
         <SocialNetwork />
       </div>
-      <div className="section section-footer">
-        <h1>Footer</h1>
-      </div>
+      
     </div>
   );
 }
