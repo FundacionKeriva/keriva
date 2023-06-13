@@ -26,7 +26,7 @@ export default function LandPage() {
   }, []);
 
   return (
-    <div ref={fullpageRef} className="fullpage-wrapper">
+    <div ref={fullpageRef} title="Fullpage library" className="fullpage-wrapper" >
       <div className="section section-carrusel">
         <Carousel />
       </div>
@@ -39,6 +39,7 @@ export default function LandPage() {
       <div className="section section-devs">
         <p style={{ fontWeight: "500" }}>Correo de los desarrolladores: <a
           href={gmailUrl}
+          title="Luis Fernando Gutierrez Hernandez"
           target="_blank"
           rel="noopener noreferrer" style={{ color: "#ee00aa" }}>luisgutierrez5-1@dgb.email</a></p>
       </div>

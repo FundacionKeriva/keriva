@@ -39,7 +39,7 @@ export default function CarouselServices() {
                         }}>
                             <Col>
                                 <div className="custom-card">
-                                    <Image src={service.imageUrl} rounded style={{ width: "370px", height: "370px",maxWidth:"370px" }} />
+                                    <Image src={service.imageUrl} alt={service.name} title={service.name} rounded style={{ width: "370px", height: "370px",maxWidth:"370px" }} />
                                 </div>
                             </Col>
                             <Col>
@@ -59,7 +59,7 @@ export default function CarouselServices() {
                 }}>
                     <Col>
                         <div className="custom-card">
-                            <Image src="/keriva/Images/icon-keriva.jpg" rounded style={{ width: "370px", height: "370px" }} />
+                            <Image src="/keriva/Images/icon-keriva.jpg" alt="Keriva AC" title="Keriva" rounded style={{ width: "370px", height: "370px" }} />
                         </div>
                     </Col>
                     <Col>

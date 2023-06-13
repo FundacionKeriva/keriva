@@ -9,7 +9,7 @@ import './socialnetwork.css';
 export default function Footer() {
     const facebookUrl = 'https://www.facebook.com/KerivaAC';
     const instagramUrl = 'https://instagram.com/fundacion_kerivaac?igshid=MmJiY2I4NDBkZg==';
-
+    const whatsappUrl='https://api.whatsapp.com/send?phone=+524491888898&text=Hola%20Fundación%20Keriva,%20me%20pueden%20dar%20información%20sobre...';
     return (
         <footer className="footer">
             <div className="bubble-container">
@@ -33,15 +33,15 @@ export default function Footer() {
 
             <Row className='icons-container'>
                 <div style={{ marginTop: "60px" }}>
-                    <a href={facebookUrl} target="_blank" rel="noopener noreferrer">
-                        <Image className='icon' src={facebookImage} alt='Facebook' />
+                    <a href={facebookUrl} title='Keriva Ac' target="_blank" rel="noopener noreferrer">
+                        <Image className='icon' src={facebookImage} alt='Facebook' title="Keriva" />
                     </a>
 
-                    <a href={instagramUrl} target="_blank" rel="noopener noreferrer">
-                        <Image className='icon' src={instagramImage} alt='Instagram' />
+                    <a href={instagramUrl} title='Keriva Ac' target="_blank" rel="noopener noreferrer">
+                        <Image className='icon' src={instagramImage} alt='Instagram' title="Keriva" />
                     </a>
-                    <a href="https://api.whatsapp.com/send?phone=+524491888898&text=Hola%20Fundación%20Keriva,%20me%20pueden%20dar%20información%20sobre..." target="_blank" rel="noopener noreferrer">
-                        <Image className='icon' src={whatsappImage} alt='Whatsapp' />
+                    <a href={whatsappUrl} title='Keriva Ac' target="_blank" rel="noopener noreferrer">
+                        <Image className='icon' src={whatsappImage} alt='Whatsapp' title="Keriva"/>
                     </a>
 
                 </div>

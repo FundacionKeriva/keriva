@@ -24,6 +24,7 @@ export default function Footer() {
                     <li>Teléfono: 449 188 88 98</li>
                     <li>Whatsapp: <a
                         className="purple-link"
+                        title='Keriva Ac'
                         href={whatsUrl}
                         target="_blank"
                         rel="noopener noreferrer">+52 1 449 188 88 98
@@ -32,6 +33,7 @@ export default function Footer() {
                     <li>
                         Dirección: <a
                             className="purple-link"
+                            title='Keriva Ac'
                             href={mapsUrl}
                             target="_blank"
                             rel="noopener noreferrer"
@@ -41,6 +43,7 @@ export default function Footer() {
                     <li>
                         Email: <a
                             className="purple-link"
+                            title='Keriva Ac'
                             href={gmailUrl}
                             target="_blank"
                             rel="noopener noreferrer">
@@ -52,14 +55,14 @@ export default function Footer() {
             <Col xs={10} md={3} className="colc">
                 <h3 className="title">Síguenos</h3>
                 <div>
-                    <a href={facebookUrl} target="_blank" rel="noopener noreferrer">
-                        <Image className="icon-footer" src={facebookImage} alt="Facebook" />
+                    <a href={facebookUrl} title='Keriva Ac' target="_blank" rel="noopener noreferrer">
+                        <Image className="icon-footer" title="Keriva" src={facebookImage} alt="Facebook" />
                     </a>
-                    <a href={instagramUrl} target="_blank" rel="noopener noreferrer">
-                        <Image className="icon-footer" src={instagramImage} alt="Facebook" />
+                    <a href={instagramUrl} title='Keriva Ac' target="_blank" rel="noopener noreferrer">
+                        <Image className="icon-footer" title="Keriva" src={instagramImage} alt="Facebook" />
                     </a>
-                    <a href={whatsUrl} target="_blank" rel="noopener noreferrer">
-                        <Image className='icon-footer' src={whatsappImage} alt='Whatsapp' />
+                    <a href={whatsUrl} title='Keriva Ac' target="_blank" rel="noopener noreferrer">
+                        <Image className='icon-footer' title="Keriva" src={whatsappImage} alt='Whatsapp' />
                     </a>
                 </div>
             </Col>

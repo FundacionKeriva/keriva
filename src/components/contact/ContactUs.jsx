@@ -16,7 +16,7 @@ export default function Contactus() {
             <Col xs={10} md={3} className="contactcolc">
                 <h3 className="contacttitle">Conoce más</h3>
                 <p className="contacttext"> <i>"Es una fundación sin fines de lucro que apoya a distintos sectores como lo son adultos mayores, adolescentes y niños"</i></p>
-                <p style={{color:"#000"}}>- Alejandro M</p>
+                <p style={{ color: "#000" }}>- Alejandro M</p>
             </Col>
             <Col xs={10} md={4} className="contactcolc ">
                 <h3 className="contacttitle">Contáctanos</h3>
@@ -24,6 +24,7 @@ export default function Contactus() {
                     <li>Teléfono: 449 188 88 98</li>
                     <li>Whatsapp: <a
                         className="contactpurple-link"
+                        title='Keriva Ac'
                         href={whatsUrl}
                         target="_blank"
                         rel="noopener noreferrer">+52 1 449 188 88 98
@@ -32,6 +33,7 @@ export default function Contactus() {
                     <li>
                         Dirección: <a
                             className="contactpurple-link"
+                            title='Keriva Ac'
                             href={mapsUrl}
                             target="_blank"
                             rel="noopener noreferrer"
@@ -41,6 +43,7 @@ export default function Contactus() {
                     <li>
                         Email: <a
                             className="contactpurple-link"
+                            title='Keriva Ac'
                             href={gmailUrl}
                             target="_blank"
                             rel="noopener noreferrer">
@@ -52,14 +55,14 @@ export default function Contactus() {
             <Col xs={10} md={3} className="contactcolc">
                 <h3 className="contacttitle">Síguenos</h3>
                 <div>
-                    <a href={facebookUrl} target="_blank" rel="noopener noreferrer">
-                        <Image className="contacticon-footer" src={facebookImage} alt="Facebook" />
+                    <a href={facebookUrl} title='Keriva Ac' target="_blank" rel="noopener noreferrer">
+                        <Image className="contacticon-footer" title='Keriva Ac' src={facebookImage} alt="Facebook" />
                     </a>
-                    <a href={instagramUrl} target="_blank" rel="noopener noreferrer">
-                        <Image className="contacticon-footer" src={instagramImage} alt="Facebook" />
+                    <a href={instagramUrl} title='Keriva Ac' target="_blank" rel="noopener noreferrer">
+                        <Image className="contacticon-footer" title='Keriva Ac' src={instagramImage} alt="Facebook" />
                     </a>
-                    <a href={whatsUrl} target="_blank" rel="noopener noreferrer">
-                        <Image className='contacticon-footer' src={whatsappImage} alt='Whatsapp' />
+                    <a href={whatsUrl} title='Keriva Ac' target="_blank" rel="noopener noreferrer">
+                        <Image className='contacticon-footer' title='Keriva Ac' src={whatsappImage} alt='Whatsapp' />
                     </a>
                 </div>
             </Col>
