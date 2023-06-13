@@ -43,12 +43,17 @@
       "price": "20"
     },
     "-NX2byWwcJK-Iy6uMvOc": {
-      "available": true,
+      "available": false,
       "description": "Lunes a sabado",
-      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/kerivadb.appspot.com/o/images%2FtallerGuitarra.jpg?alt=media&token=1d3c751d-7c34-4ebe-8dab-5f9e40557f06",
+      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/kerivadb.appspot.com/o/images%2FtallerGuitarra.jpg?alt=media&token=64c5fdda-55e9-4b07-a5c4-09e852b374e3",
       "name": "Editar servicio",
-      "price": "33"
+      "price": "332"
+    }
+  },
+  "users": {
+    "admin": {
+      "code": "keriva",
+      "password": "12345678"
     }
   }
 }
-  

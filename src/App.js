@@ -1,7 +1,7 @@
-import Splash from "./components/SplashScreen";
-import "./components-css/app.css";
 import { useEffect, useState } from "react";
+import Splash from "./components/SplashScreen";
 import MainNavigation from "./components/MainNavigation";
+import "./components-css/app.css";
 
 function App() {
   const [show, setShow] = useState(true);

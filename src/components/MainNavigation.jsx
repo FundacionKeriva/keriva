@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Routes } from "react-router-dom";
 
 import Navigation from "./Navigation";
-import ContactUs from "./ContactUs";
+import ContactUs from "./contact/ContactUs";
 import LandingPage from "./landing/LandingPage";
 import Catalog from "./servicesKeriva/Catalog";
 import AdminDashboard from "./administration/Dashboard";
