@@ -18,3 +18,13 @@
   width: 100vw;
   max-height: 100vh;
 }
+
+.section-devs {
+  background: #141023;
+  color: #fff;
+  padding: 0;
+  width: 100vw;
+  max-height: 20vh;
+  text-align: center;
+  justify-content: center;
+}
