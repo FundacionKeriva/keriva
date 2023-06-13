@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/keriva/static/css/main.4408365e.css",
-    "main.js": "/keriva/static/js/main.1be3df73.js",
+    "main.js": "/keriva/static/js/main.334bd96d.js",
     "static/media/catalog-card.jpg": "/keriva/static/media/catalog-card.74fabc97e4f1f36b3a63.jpg",
     "static/media/whatsapp-dark-pink.png": "/keriva/static/media/whatsapp-dark-pink.443c3e487decf4b98a1e.png",
     "static/media/instagram.png": "/keriva/static/media/instagram.79535458a8a6d88f81d4.png",
@@ -11,10 +11,10 @@
     "static/media/facebook-dark-pink.png": "/keriva/static/media/facebook-dark-pink.a9384bd3ce6bb98177fb.png",
     "index.html": "/keriva/index.html",
     "main.4408365e.css.map": "/keriva/static/css/main.4408365e.css.map",
-    "main.1be3df73.js.map": "/keriva/static/js/main.1be3df73.js.map"
+    "main.334bd96d.js.map": "/keriva/static/js/main.334bd96d.js.map"
   },
   "entrypoints": [
     "static/css/main.4408365e.css",
-    "static/js/main.1be3df73.js"
+    "static/js/main.334bd96d.js"
   ]
 }
