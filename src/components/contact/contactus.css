@@ -1,0 +1,41 @@
+.footer-container {
+    background: #fff;
+    height: 100vh;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+}
+
+.title{
+    color: #000;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.text{
+    color: #000;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.icon-footer {
+    max-width: 50px;
+    max-height: 50px;
+    margin-right: 10px;
+}
+
+.colc {
+    height: 150px;
+    max-height: 200px;
+}
+
+.purple-link {
+    color: #ee00aa;
+}
+
+.purple-link:hover {
+    color: darkviolet;
+    /* Cambia el color al pasar el ratón por encima */
+}
