@@ -1,6 +1,7 @@
-.footer-container {
+.contact-container {
     background: #fff;
-    height: 100vh;
+    color: #000;
+    height: 90vh;
     max-width: 100%;
     display: flex;
     justify-content: center;
@@ -8,34 +9,33 @@
     text-align: left;
 }
 
-.title{
-    color: #000;
+.contacttitle{
+    
     font-size: 28px;
     font-weight: 700;
 }
 
-.text{
-    color: #000;
+.contacttext{
     font-size: 18px;
     font-weight: 500;
 }
 
-.icon-footer {
+.contacticon-footer {
     max-width: 50px;
     max-height: 50px;
     margin-right: 10px;
 }
 
-.colc {
+.contactcolc {
     height: 150px;
     max-height: 200px;
 }
 
-.purple-link {
+.contactpurple-link {
     color: #ee00aa;
 }
 
-.purple-link:hover {
+.-contactpurple-link:hover {
     color: darkviolet;
     /* Cambia el color al pasar el ratón por encima */
 }
