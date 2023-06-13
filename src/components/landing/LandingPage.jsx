@@ -26,7 +26,7 @@ export default function LandPage() {
   }, []);
 
   return (
-    <div ref={fullpageRef} title="Fullpage library" className="fullpage-wrapper" >
+    <div ref={fullpageRef}  className="fullpage-wrapper" >
       <div className="section section-carrusel">
         <Carousel />
       </div>

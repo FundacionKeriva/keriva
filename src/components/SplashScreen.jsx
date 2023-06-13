@@ -8,7 +8,7 @@ export default function Splash() {
         <div className="customContainer">
             <Row>
                 <Col className="customColImage">
-                    <Image src="/keriva/Images/icon-keriva.jpg" className="imageK" />
+                    <Image src="/keriva/Images/icon-keriva.jpg" title="Keriva AC" className="imageK" />
                 </Col>
                 <Col className="customCol">
                     <div className="typing-container">
