@@ -10,7 +10,7 @@ import Footer from "./Footer";
 export default function LandPage() {
   const fullpageRef = useRef(null);
   let fullpageInstance = null;
-  const gmailUrl = "https://mail.google.com/mail/?view=cm&to=luisgutierrez5-1@dgb.email&su=Hola%20Luis%20me,%20intersan%20tus%20servicios...";
+  const gmailUrl = "https://mail.google.com/mail/?view=cm&to=luisgutierrezDev@gmail.com&su=Hola%20Luis%20me,%20intersan%20tus%20servicios...";
    
 
   useEffect(() => {
@@ -41,7 +41,7 @@ export default function LandPage() {
           href={gmailUrl}
           title="Luis Fernando Gutierrez Hernandez"
           target="_blank"
-          rel="noopener noreferrer" style={{ color: "#ee00aa" }}>luisgutierrez5-1@dgb.email</a></p>
+          rel="noopener noreferrer" style={{ color: "#ee00aa" }}>luisgutierrezDev@gmail.com</a></p>
       </div>
     </div>
   );
